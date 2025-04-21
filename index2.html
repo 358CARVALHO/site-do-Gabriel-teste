@@ -1,0 +1,1906 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Consultoria Online - Gabriel Ruchert | Personal Trainer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #000000;
+      --primary-light: #000000;
+      --secondary: #000;
+      --light: #f9f9f9;
+      --white: #ffffff;
+      --gray: #eeeeee;
+      --dark-gray: #bbbbbb;
+    }
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--light);
+      color: var(--secondary);
+      line-height: 1.6;
+    }
+    
+    header {
+      background: linear-gradient(135deg, #000000, #ff6600);
+      color: var(--white);
+      text-align: center;
+      padding: 100px 20px 80px;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .header-content {
+      max-width: 900px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+    
+    header h1 {
+      font-size: 2.8rem;
+      margin: 0 0 15px;
+      line-height: 1.2;
+      font-weight: 700;
+    }
+    
+    header p {
+      font-size: 1.3rem;
+      margin-top: 10px;
+      opacity: 0.9;
+      font-weight: 300;
+    }
+    
+    .personal-photo {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 5px solid var(--white);
+      margin: 20px auto;
+      display: block;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    section {
+      background: var(--white);
+      box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+      border-radius: 15px;
+      margin: -60px auto 60px;
+      position: relative;
+      z-index: 1;
+      overflow: hidden;
+    }
+    
+    .section-content {
+      padding: 60px;
+    }
+    
+    h2 {
+      color: var(--primary);
+      font-size: 2rem;
+      margin-bottom: 30px;
+      position: relative;
+      padding-bottom: 15px;
+      font-weight: 600;
+    }
+    
+    h2:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 80px;
+      height: 4px;
+      background: var(--primary-light);
+    }
+    
+    h3 {
+      color: var(--primary);
+      margin: 30px 0 20px;
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+    
+    ul {
+      list-style-type: none;
+      margin-bottom: 40px;
+    }
+    
+    ul li {
+      padding: 12px 0;
+      position: relative;
+      padding-left: 35px;
+      font-size: 1.1rem;
+    }
+    
+    ul li:before {
+      content: '✓';
+      color: var(--primary);
+      font-weight: bold;
+      position: absolute;
+      left: 0;
+      font-size: 1.3rem;
+    }
+    /* Estilos para a seção Nossos Números */
+    .numeros-section {
+  background: linear-gradient(135deg, #000000, #ff6600);
+  color: white;
+  border-radius: 15px;
+  margin: 60px auto;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  padding: 60px 20px;
+}
+.highlight-scroll {
+      animation: highlight 1s ease;
+    }
+    @keyframes highlight {
+      0% { box-shadow: 0 0 0 0 rgba(255,102,0,0.7); }
+      50% { box-shadow: 0 0 0 10px rgba(255,102,0,0); }
+      100% { box-shadow: 0 0 0 0 rgba(255,102,0,0); }
+    }
+/* Novo: container flex para imagem + grid */
+.numeros-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 40px;
+  justify-content: center;
+}
+
+/* imagem do lado esquerdo */
+.numeros-img {
+  flex: 1 1 300px;
+  max-width: 500px;
+}
+
+.numeros-img img {
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* grid dos números ao lado direito */
+.numeros-grid {
+  flex: 2 1 400px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.numeros-section h2 {
+  color: white;
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.numeros-section h2:after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: white;
+  margin-top: 10px;
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.section-subtitle {
+  text-align: center;
+  font-size: 1.2rem;
+  margin: 0 auto 50px auto;
+  opacity: 0.9;
+  max-width: 700px;
+}
+
+.numero-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 40px 25px;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.numero-card:hover {
+  transform: translateY(-10px);
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.numero-value {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: white;
+  line-height: 1;
+}
+
+.numero-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: white;
+}
+
+.numero-desc {
+  font-size: 1rem;
+  opacity: 0.9;
+  line-height: 1.6;
+  color: white;
+}
+
+.cta-numeros {
+  text-align: center;
+  margin-top: 50px;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .numeros-content {
+    flex-direction: column;
+  }
+
+  .numeros-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .numero-card {
+    padding: 30px 20px;
+  }
+
+  .numero-value {
+    font-size: 2.8rem;
+  }
+}
+/* NOVOS ESTILOS PARA A SEÇÃO DE PLANOS */
+.planos-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.planos-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  max-width: 900px;
+  width: 100%;
+}
+
+.plano-card {
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  padding: 30px;
+  transition: all 0.3s ease;
+  border-top: 5px solid #ff6600;
+}
+
+.plano-card.destaque {
+  transform: scale(1.02);
+  border-top: 5px solid #000;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+  position: relative;
+}
+
+.plano-card.destaque::before {
+  content: "MAIS POPULAR";
+  position: absolute;
+  top: -10px;
+  right: 20px;
+  background: #ff6600;
+  color: white;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+  .planos-grid {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+  }
+  
+  .plano-card.destaque {
+    transform: none;
+  }
+}
+ 
+  .plano-header {
+    text-align: center;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .plano-header h3 {
+    font-size: 1.8rem;
+    color: #000;
+    margin-bottom: 15px;
+  }
+  
+  .plano-preco {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #ff6600;
+    margin: 10px 0;
+  }
+  
+  .plano-preco span {
+    font-size: 1rem;
+    color: #666;
+    font-weight: normal;
+  }
+  
+  .plano-beneficios {
+    margin: 25px 0;
+    list-style: none;
+  }
+  
+  .plano-beneficios li {
+    padding: 12px 0;
+    position: relative;
+    padding-left: 30px;
+    font-size: 1.05rem;
+  }
+  
+  .plano-beneficios li span {
+    color: #ff6600;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+  }
+  
+  .destaque-beneficio {
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 20px 0;
+    text-align: center;
+    font-size: 0.95rem;
+    color: #666;
+  }
+  
+  .btn-plano {
+    display: block;
+    background: #ff6600;
+    color: white;
+    padding: 15px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    text-align: center;
+    transition: all 0.3s ease;
+  }
+  
+  .btn-plano:hover {
+    background: #000;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  }
+  
+  .pagamento-info {
+    text-align: center;
+    margin: 40px 0 20px;
+    font-size: 1.1rem;
+    color: #666;
+  }
+  
+  .cta-duvidas {
+    text-align: center;
+    margin: 30px 0;
+  }
+  
+  .btn-duvidas {
+    display: inline-block;
+    background: #000;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: 2px solid #000;
+  }
+  
+  .btn-duvidas:hover {
+    background: transparent;
+    color: #000;
+  }
+  
+  /* RESPONSIVO */
+  @media (max-width: 992px) {
+    .planos-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+    
+    .plano-card.destaque {
+      transform: none;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .planos-grid {
+      grid-template-columns: 1fr;
+      max-width: 500px;
+    }
+    
+    .plano-card {
+      padding: 25px;
+    }
+    
+    .plano-header h3 {
+      font-size: 1.6rem;
+    }
+    
+    .plano-preco {
+      font-size: 2.2rem;
+    }
+  }
+      /* Seção de Benefícios */
+      .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin: 40px 0;
+    }
+    
+    .benefit-card {
+      background: var(--white);
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+    
+    .benefit-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+    
+    .benefit-icon {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+      color: var(--primary);
+    }
+    
+    .benefit-card h3 {
+      color: var(--secondary);
+      margin-bottom: 10px;
+    }
+    /* ESTILOS PARA CARROSSEL DE RESULTADOS */
+    .before-after {
+      margin: 60px 0;
+      position: relative;
+    }
+    
+    .before-after h2 {
+      text-align: center;
+    }
+    
+    .results-carousel {
+      position: relative;
+      max-width: 1000px;
+      margin: 40px auto 0;
+      overflow: hidden;
+    }
+    
+    .results-container {
+      display: flex;
+      transition: transform 0.5s ease;
+      width: 100%;
+    }
+    
+    .result-card {
+      min-width: 100%;
+      background: var(--white);
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+      margin: 0 10px;
+    }
+    
+    .result-images {
+      display: flex;
+      position: relative;
+    }
+    
+    .result-images img {
+      width: 100%;
+      height: 350px;
+      object-fit: cover;
+    }
+    
+    .result-info {
+      padding: 25px;
+      text-align: center;
+    }
+    
+    .result-info h3 {
+      margin: 0 0 15px;
+      color: var(--secondary);
+    }
+    
+    .result-info p {
+      color: #666;
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+    
+    .carousel-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      padding: 0 20px;
+      z-index: 10;
+    }
+    
+    .carousel-btn {
+      background: rgba(0,0,0,0.7);
+      color: white;
+      border: none;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      font-size: 1.5rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+    
+    .carousel-btn:hover {
+      background: #ff6600;
+      transform: scale(1.1);
+    }
+    
+    .carousel-dots {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    
+    .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #ddd;
+      margin: 0 5px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .dot.active {
+      background: #ff6600;
+      transform: scale(1.2);
+    }
+    
+    /* DESTAQUE */
+    .destaque {
+      background: linear-gradient(135deg, #000000, #ff6600);
+      color: var(--white);
+      padding: 80px 20px;
+      text-align: center;
+      margin: 60px 0;
+      border-radius: 15px;
+    }
+    
+    .destaque h2 {
+      color: var(--white);
+      margin-bottom: 25px;
+      font-size: 2.2rem;
+    }
+    
+    .destaque h2:after {
+      background: var(--white);
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    
+    .destaque p {
+      max-width: 800px;
+      margin: 0 auto 40px;
+      font-size: 1.2rem;
+      line-height: 1.8;
+    }
+    
+    /* CTA */
+    .cta {
+      text-align: center;
+      margin: 60px 0 40px;
+    }
+    
+    .cta a {
+      background: #000000;
+      color: var(--white);
+      padding: 20px 50px;
+      font-size: 1.3rem;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      display: inline-block;
+      font-weight: 600;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+    
+    .cta a:hover {
+      background: #ff6600;
+      transform: translateY(-5px) scale(1.05);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+    }
+    
+    /* FOOTER */
+    footer {
+      background: var(--secondary);
+      color: var(--dark-gray);
+      text-align: center;
+      padding: 50px 20px;
+      margin-top: 80px;
+    }
+    
+    footer img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin: 0 auto 20px;
+      display: block;
+      border: 4px solid #ff6600;
+    }
+    
+    footer h3 {
+      color: var(--white);
+      margin-bottom: 10px;
+      font-size: 1.8rem;
+    }
+    
+    footer p {
+      margin-bottom: 25px;
+      font-size: 1.1rem;
+    }
+    
+    .social-links {
+      margin: 30px 0;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+    
+    .social-links a {
+      color: var(--white);
+      font-size: 1.8rem;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      width: 60px;
+      height: 60px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 50%;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .social-links a:hover {
+      color: var(--white);
+      background: #ff6600;
+      transform: translateY(-5px);
+    }
+    
+    footer .copyright {
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+    
+    /* SEÇÃO "QUEM É GABRIEL" */
+    .about-section {
+      margin: 40px auto;
+      background: var(--white);
+      border-radius: 15px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+      overflow: hidden;
+    }
+    
+    .about-content {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    
+    .about-text {
+      flex: 1;
+      min-width: 300px;
+      padding: 40px;
+    }
+    
+    .about-image {
+      flex: 1;
+      min-width: 300px;
+      position: relative;
+    }
+    
+    .about-image img {
+      width: 100%;
+      height: 100%;
+      min-height: 400px;
+      object-fit: cover;
+    }
+    /* Botão Comece Agora */
+.btn-comece-agora {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #ff6600;
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    margin: 30px auto;
+    transition: all 0.3s ease;
+    text-align: center;
+    font-size: 1.1rem;
+    box-shadow: 0 5px 15px rgba(255, 102, 0, 0.3);
+    border: none;
+    cursor: pointer;
+    width: fit-content;
+}
+
+.btn-comece-agora:hover {
+    background-color: #e65c00;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(255, 102, 0, 0.4);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+.depoimentos-section {
+      margin: 60px auto;
+      background: var(--white);
+      border-radius: 15px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+    }
+
+    .depoimentos-container {
+      padding: 60px;
+      position: relative;
+    }
+
+    .depoimentos-title {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .depoimentos-title h2 {
+      text-align: center;
+      margin-bottom: 15px;
+    }
+
+    .depoimentos-title h2:after {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .depoimentos-title p {
+      font-size: 1.1rem;
+      color: #666;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .depoimentos-carrossel {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      padding: 20px 0;
+    }
+
+    .depoimentos-track {
+      display: flex;
+      gap: 20px;
+      transition: transform 0.5s ease;
+    }
+
+    .depoimento-card {
+      min-width: 300px;
+      flex: 0 0 300px;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+    }
+
+    .depoimento-card {
+  min-width: 300px;
+  flex: 0 0 300px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  display: flex;
+  justify-content: center; /* Garante que o conteúdo do card (imagem) fique centralizado */
+  align-items: center; /* Centraliza a imagem verticalmente, se necessário */
+}
+
+.depoimento-img {
+  max-width: 100%; /* Garante que a imagem ocupe 100% da largura do card */
+  height: auto; /* Mantém a proporção da imagem */
+  display: block;
+  margin: 0 auto; /* Centraliza horizontalmente */
+}
+
+    .carrossel-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      padding: 0 10px;
+      z-index: 10;
+    }
+
+    .carrossel-btn {
+      background: rgba(0,0,0,0.7);
+      color: white;
+      border: none;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      font-size: 1.2rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+
+    .carrossel-btn:hover {
+      background: #ff6600;
+      transform: scale(1.1);
+    }
+
+    .carrossel-dots {
+      display: flex;
+      justify-content: center;
+      margin-top: 30px;
+      gap: 10px;
+    }
+
+    .carrossel-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #ddd;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .carrossel-dot.active {
+      background: #ff6600;
+      transform: scale(1.2);
+    }
+
+    @media (max-width: 768px) {
+      .depoimentos-container {
+        padding: 40px 20px;
+      }
+      
+      .depoimento-card {
+        min-width: 280px;
+        flex: 0 0 280px;
+      }
+      
+      .carrossel-btn {
+        width: 35px;
+        height: 35px;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .depoimentos-title h2 {
+        font-size: 1.8rem;
+      }
+      
+      .depoimento-card {
+        min-width: 260px;
+        flex: 0 0 260px;
+      }
+    }
+    /* RESPONSIVO */
+    @media (max-width: 1200px) {
+      .result-images img {
+        height: 300px;
+      }
+    }
+    
+    @media (max-width: 992px) {
+      .section-content {
+        padding: 50px 40px;
+      }
+      
+      .plano-card {
+        min-width: 280px;
+      }
+      
+      .result-images img {
+        height: 280px;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      header {
+        padding: 80px 20px 60px;
+      }
+      
+      header h1 {
+        font-size: 2.2rem;
+      }
+      
+      header p {
+        font-size: 1.1rem;
+      }
+      
+      .personal-photo {
+        width: 150px;
+        height: 150px;
+      }
+      
+      .section-content {
+        padding: 40px 30px;
+      }
+      
+      h2 {
+        font-size: 1.8rem;
+      }
+      
+      .result-images img {
+        height: 250px;
+      }
+      
+      .plano-card {
+        min-width: 100%;
+        max-width: 100%;
+      }
+      
+      .cta a {
+        font-size: 1.1rem;
+        padding: 18px 40px;
+      }
+      
+      .carousel-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+      }
+      
+      .about-text, .about-image {
+        min-width: 100%;
+      }
+      
+      .about-image img {
+        min-height: 300px;
+      }
+    }
+    
+    @media (max-width: 576px) {
+      header {
+        padding: 60px 20px 40px;
+      }
+      
+      header h1 {
+        font-size: 1.8rem;
+      }
+      
+      .personal-photo {
+        width: 120px;
+        height: 120px;
+      }
+      
+      .section-content {
+        padding: 30px 20px;
+      }
+      
+      h2 {
+        font-size: 1.6rem;
+        margin-bottom: 20px;
+      }
+      
+      ul li {
+        font-size: 1rem;
+        padding-left: 30px;
+      }
+      
+      .destaque {
+        padding: 50px 20px;
+      }
+      
+      .destaque h2 {
+        font-size: 1.8rem;
+      }
+      
+      .destaque p {
+        font-size: 1rem;
+      }
+      
+      footer {
+        padding: 40px 20px;
+      }
+      
+      footer img {
+        width: 80px;
+        height: 80px;
+      }
+      
+      .social-links a {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+      }
+      
+      .result-images img {
+        height: 220px;
+      }
+      
+      .carousel-btn {
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+        padding: 0;
+      }
+      
+      .about-text {
+        padding: 30px 20px;
+      }
+    }
+        /* CTA */
+        .cta {
+      text-align: center;
+      margin: 50px 0 30px;
+    }
+    
+    .cta-button {
+      background: var(--primary);
+      color: var(--white);
+      padding: 18px 40px;
+      font-size: 1.2rem;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      display: inline-block;
+      font-weight: 600;
+      box-shadow: 0 5px 15px rgba(255,94,0,0.3);
+      border: none;
+      cursor: pointer;
+    }
+    
+    .cta-button:hover {
+      background: var(--primary-dark);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(255,94,0,0.4);
+    }
+    
+    .cta-pulse {
+      animation: pulse 2s infinite;
+      display: inline-block;
+    }
+    
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+      /* ESTILOS PARA OS BENEFÍCIOS (adicione ao seu CSS) */
+  .beneficios-section {
+    padding: 60px 20px;
+    text-align: center;
+  }
+  
+  .beneficios-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    color: #000;
+    position: relative;
+  }
+  
+  .beneficios-section h2:after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: #ff6600;
+    margin: 15px auto 0;
+  }
+  
+  .beneficios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .beneficio-card {
+    background: #fff;
+    border-radius: 15px;
+    padding: 40px 25px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    border-top: 4px solid #ff6600;
+  }
+  
+  .beneficio-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+  }
+  
+  .beneficio-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #ff6600;
+  }
+  
+  .beneficio-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #000;
+  }
+  
+  .beneficio-card p {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.6;
+  }
+  
+  .destaque-cupom {
+    background: #ff6600;
+    color: white;
+    padding: 3px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 5px;
+  }
+  
+  @media (max-width: 768px) {
+    .beneficios-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .beneficio-card {
+      padding: 30px 20px;
+    }
+  }
+   /* ESTILOS PARA ESTA SEÇÃO */
+   .destaque-com-imagem {
+    background: linear-gradient(135deg, #000000, #ff6600);
+    color: white;
+    padding: 60px 20px;
+    margin: 60px 0;
+  }
+  
+  .destaque-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+  }
+  
+  .destaque-texto {
+    flex: 1;
+  }
+  
+  .destaque-texto h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    position: relative;
+    color: white;
+  }
+  
+  .destaque-texto h2:after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 80px;
+    height: 3px;
+    background: white;
+  }
+  
+  .destaque-texto p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 25px;
+    opacity: 0.9;
+  }
+  
+  .destaque-lista {
+    list-style: none;
+    margin: 30px 0;
+  }
+  
+  .destaque-lista li {
+    padding: 10px 0;
+    font-size: 1.1rem;
+    position: relative;
+    padding-left: 35px;
+  }
+  
+  .destaque-lista li span {
+    color: #ff6600;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    font-size: 1.5rem;
+  }
+  
+  .destaque-imagem {
+    flex: 1;
+    position: relative;
+  }
+  
+  .foto-metodo {
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    border: 5px solid white;
+    transform: rotate(-3deg);
+    transition: transform 0.3s ease;
+  }
+  
+  .foto-metodo:hover {
+    transform: rotate(0deg) scale(1.02);
+  }
+  
+  .btn-destaque {
+    display: inline-block;
+    padding: 18px 40px;
+    background: white;
+    color: #ff6600;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  }
+  
+  .btn-destaque:hover {
+    background: #000;
+    color: white;
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+  }
+  
+  /* RESPONSIVO */
+  @media (max-width: 992px) {
+    .destaque-container {
+      flex-direction: column;
+      gap: 30px;
+    }
+    
+    .destaque-texto, .destaque-imagem {
+      width: 100%;
+    }
+    
+    .destaque-texto h2 {
+      font-size: 2rem;
+    }
+    
+    .foto-metodo {
+      max-width: 500px;
+      margin: 0 auto;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .destaque-com-imagem {
+      padding: 40px 20px;
+    }
+    
+    .destaque-texto h2 {
+      font-size: 1.8rem;
+    }
+    
+    .btn-destaque {
+      padding: 15px 30px;
+      width: 100%;
+      text-align: center;
+    }
+  }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-content">
+      <img src="logo_header.png" alt="Gabriel Ruchert - Personal Trainer" class="personal-photo">
+      <h1>Transforme Seu Corpo com Acompanhamento Especializado</h1>
+      <p>Consultoria Online Personalizada com Resultados Comprovados</p>
+      <p></p>
+
+      <div class="cta-pulse">
+        <a href="#planos" class="cta-button">QUERO ME TRANSFORMAR</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <section>
+      <div class="section-content">
+        <div class="benefits-section">
+          <h2>🚀 O que você vai conquistar:</h2>
+          <div class="benefits-grid">
+            <div class="benefit-card">
+              <div class="benefit-icon"></div>
+              <h3>Treino 100% Personalizado</h3>
+              <p>Plano de treino feito sob medida para seus objetivos e necessidades, enviado via PDF ou aplicativo.</p>
+            </div>
+            <div class="benefit-card">
+              <div class="benefit-icon"></div>
+              <h3>Vídeos Demonstrativos</h3>
+              <p>Acesso a vídeos explicativos de todos os exercícios para garantir a execução correta.</p>
+            </div>
+            <div class="benefit-card">
+              <div class="benefit-icon"></div>
+              <h3>Flexibilidade de Duração</h3>
+              <p>Programas de 1, 3, 6 ou 12 meses, adaptados ao seu ritmo e metas.</p>
+            </div>
+            <div class="benefit-card">
+              <div class="benefit-icon"></div>
+              <h3>Entrega Rápida e Suporte Contínuo</h3>
+              <p> Plano entregue em até 5 dias úteis, com ajustes e dúvidas resolvidos online a qualquer momento.</p>
+            </div>
+            <div class="benefit-card">
+              <div class="benefit-icon"></div>
+              <h3>Atendimento Global </h3>
+              <p>Acompanhamento para alunos de diferentes fusos horários, com respostas rápidas via chat.</p>
+            </div>
+            <div class="benefit-card">
+              <div class="benefit-icon"></div>
+              <h3>Avaliação Completa</h3>
+              <p>namnese detalhada (rotina, histórico, lesões).</p>
+              <p> Avaliação postural (por fotos) para corrigir desalinhamentos.</p>
+              <p> Avaliação antropométrica (gordura x massa magra).</p>
+            </div>
+          </div>
+        </div>
+        <div class="before-after">
+          <h2>Resultados dos Meus Alunos</h2>
+          <div class="results-carousel">
+            <div class="results-container" id="results-carousel">
+              <div class="result-card">
+                <div class="result-images">
+                  <img src="resultado_1.png" alt="Resultado 1">
+                </div>
+                <div class="result-info">
+                  <h3>Marcos, 32 anos</h3>
+                  <p>"Perdi 12kg de gordura e ganhei massa muscular com o método do Gabriel!"</p>
+                </div>
+              </div>
+              
+              <div class="result-card">
+                <div class="result-images">
+                  <img src="resultado_2.png" alt="Resultado 2">
+                </div>
+                <div class="result-info">
+                  <h3>Ana, 28 anos</h3>
+                  <p>"Consegui definir meu corpo para o verão como nunca imaginei possível!"</p>
+                </div>
+              </div>
+              
+              <div class="result-card">
+                <div class="result-images">
+                  <img src="resultado_3.png" alt="Resultado 3">
+                </div>
+                <div class="result-info">
+                  <h3>Carlos, 45 anos</h3>
+                  <p>"Aos 45 anos, recuperei o corpo que tinha aos 30. Melhor investimento da minha vida!"</p>
+                </div>
+              </div>
+              
+              <div class="result-card">
+                <div class="result-images">
+                  <img src="resultado_4.png" alt="Resultado 4">
+                </div>
+                <div class="result-info">
+                  <h3>Juliana, 35 anos</h3>
+                  <p>"Em 3 meses alcancei resultados que não consegui em 2 anos de academia sozinha!"</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="carousel-nav">
+              <button class="carousel-btn prev-btn" aria-label="Anterior">&#10094;</button>
+              <button class="carousel-btn next-btn" aria-label="Próximo">&#10095;</button>
+            </div>
+            
+            <div class="carousel-dots" id="carousel-dots">
+              <!-- Os dots serão gerados pelo JavaScript -->
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <section class="numeros-section">
+            <h2>Nossos números e História</h2>
+            <p class="section-subtitle">Transformando vidas através do treinamento personalizado.</p>
+          
+            <div class="numeros-content">
+              <div class="numeros-img">
+                <img src="nossos_numeros.jpg" alt="Imagem ilustrativa">
+              </div>
+          
+              <div class="numeros-grid">
+                <div class="numero-card">
+                  <div class="numero-value">+5</div>
+                  <div class="numero-title">paises</div>
+                  <div class="numero-desc">Atendemos alunos em 5 países diferentes ao redor do mundo</div>
+                </div>
+                <div class="numero-card">
+                  <div class="numero-value">+4</div>
+                  <div class="numero-title">anos de experiencia</div>
+                  <div class="numero-desc">De experiência transformando corpos e vidas</div>
+                </div>
+                <div class="numero-card">
+                  <div class="numero-value">+1000</div>
+                  <div class="numero-title">alunos</div>
+                  <div class="numero-desc">Mais de mil pessoas já transformaram seus corpos com nosso método</div>
+                </div>
+                <div class="numero-card">
+                  <div class="numero-value">100%</div>
+                  <div class="numero-title">Online</div>
+                  <div class="numero-desc">Atendimento remoto com resultados comprovados</div>
+                </div>
+              </div>
+              </div>
+              <div class="cta-numeros">
+                <!-- Botão ou chamada final -->
+              </div>
+            </div>
+
+            <div class="beneficios-section">
+              <h2>🌟 Benefícios Exclusivos</h2>
+              
+              <div class="beneficios-grid">
+                <!-- Bloco 1 -->
+                <div class="beneficio-card">
+                  <div class="beneficio-icon">💰</div>
+                  <h3>20% OFF em Suplementos</h3>
+                  <p>Desconto exclusivo na <strong>Nutriblue</strong> usando o cupom: <span class="destaque-cupom">GABRIELPERSONAL</span></p>
+                </div>
+                
+                <!-- Bloco 2 -->
+                <div class="beneficio-card">
+                  <div class="beneficio-icon">👩‍⚕️</div>
+                  <h3>Parcerias Profissionais</h3>
+                  <p>Descontos em <strong>nutricionista, psicóloga, massoterapeuta</strong> e salão de beleza parceiros</p>
+                </div>
+                
+                <!-- Bloco 3 -->
+                <div class="beneficio-card">
+                  <div class="beneficio-icon">🎁</div>
+                  <h3>Brindes Exclusivos</h3>
+                  <p><strong>Coqueteleira + Camiseta</strong> para planos semestrais ou anuais</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="destaque-com-imagem">
+              <div class="destaque-container">
+                <div class="destaque-texto">
+                  <h2>Por que escolher meu método?</h2>
+                  <p>Com mais de 8 anos de experiência e centenas de alunos transformados, desenvolvi um método que se adapta à sua rotina, objetivos e limitações. Não importa se você treina em casa ou na academia, vou criar o plano perfeito para você!</p>
+                  
+                  <ul class="destaque-lista">
+                    <li><span>✔</span> Treinos personalizados para seu biotipo</li>
+                    <li><span>✔</span> Adaptável a qualquer rotina</li>
+                    <li><span>✔</span> Suporte diário via WhatsApp</li>
+                  </ul>
+                  
+                  <div class="cta">
+                    <a href="https://web.whatsapp.com/send?phone=/5548996718419&text=Olá%20Gabriel%2C%20quero%20mais%20informa%C3%A7%C3%B5es%20sobre%20o%20plano%20individual!" 
+                       target="_blank" 
+                       class="btn-destaque">
+                      QUERO ME TRANSFORMAR AGORA
+                    </a>
+                  </div>
+                </div>
+                
+                <div class="destaque-imagem">
+                  <img src="foto_metodos.jpg" alt="Gabriel Ruchert - Método Comprovado" class="foto-metodo">
+                </div>
+              </div>
+            </div>
+        <div class="container">
+      
+            <div class="about-content">
+              <div class="about-text">
+                <h2>Quem é Gabriel</h2>
+                <p>Sou um Personal Trainer apaixonado por transformar vidas através do exercício físico. Com mais de 8 anos de experiência na área, já ajudei centenas de pessoas a alcançarem seus objetivos físicos e melhorarem sua saúde.</p>
+                <p>Minha abordagem vai além dos exercícios - acredito que a verdadeira transformação acontece quando combinamos treino científico com hábitos saudáveis e mentalidade positiva. Meu propósito é ajudar você a construir uma relação saudável com seu corpo e com a atividade física.</p>
+                <p>Formado em Educação Física e com especializações em Treinamento Funcional e Nutrição Esportiva, estou sempre me atualizando para trazer os melhores métodos para meus alunos.</p>
+                <ul>
+                  <li><strong>8+ anos</strong> de experiência como Personal Trainer</li>
+                  <li><strong>500+ alunos</strong> transformados</li>
+                  <li>Especializado em <strong>Treinamento Funcional</strong> e <strong>Nutrição Esportiva</strong></li>
+                  <li><strong>Especialista em glúteos</strong></li>
+                </ul>
+                <!-- BOTÃO COM ID ADICIONADO -->
+                <a href="#planos" class="btn-comece-agora" id="btn-comece-agora">COMEÇE AGORA</a>
+              </div>
+              <div class="about-image">
+                <img src="foto_sobremim.jpg" alt="Gabriel Ruchert treinando">
+              </div>
+            </div>
+        </div>
+<!-- Seção de Depoimentos Atualizada -->
+<div class="container">
+  
+    <div class="depoimentos-container">
+      <div class="depoimentos-title">
+        <h2>📢 O que meus alunos dizem</h2>
+        <p>Resultados reais de pessoas reais que confiaram no meu método</p>
+      </div>
+      
+      <div class="depoimentos-carrossel">
+        <div class="depoimentos-track" id="depoimentos-track">
+          <!-- Depoimento 1 -->
+          <div class="depoimento-card">
+            <img src="depoimento1.png" alt="Depoimento de aluno" class="depoimento-img">
+          </div>
+          
+          <!-- Depoimento 2 -->
+          <div class="depoimento-card">
+            <img src="depoimento2.jpeg" alt="Depoimento de aluno" class="depoimento-img">
+          </div>
+          
+          <!-- Depoimento 3 -->
+          <div class="depoimento-card">
+            <img src="depoimento3.jpeg" alt="Depoimento de aluno" class="depoimento-img">
+          </div>
+          
+          <!-- Depoimento 4 -->
+          <div class="depoimento-card">
+            <img src="depoimento4.jpeg" alt="Depoimento de aluno" class="depoimento-img">
+          </div>
+          <div class="depoimento-card">
+            <img src="depoimento5.jpeg" alt="Depoimento de aluno" class="depoimento-img">
+          </div>
+        </div>
+        
+        <div class="carrossel-nav">
+          <button class="carrossel-btn prev-btn-depoimentos" aria-label="Anterior">&#10094;</button>
+          <button class="carrossel-btn next-btn-depoimentos" aria-label="Próximo">&#10095;</button>
+        </div>
+        <div class="carrossel-dots" id="depoimentos-dots">
+          <!-- Os dots serão gerados pelo JavaScript -->
+        </div>
+      </div>
+  </div>
+ <div class="section-content">
+  <h2 id="planos">💰 Planos de Atendimento</h2>
+  
+  <div class="planos-container"> <!-- Novo container centralizado -->
+    <div class="planos-grid">
+      <!-- Plano Individual -->
+      <div class="plano-card">
+        <div class="plano-header">
+          <h3>Individual</h3>
+          <div class="plano-preco">R$ 180<span>/mês</span></div>
+        </div>
+        
+        <ul class="plano-beneficios">
+          <li><span>✓</span> Treino 100% personalizado</li>
+          <li><span>✓</span> Vídeos demonstrativos</li>
+          <li><span>✓</span> Avaliação física inicial</li>
+          <li><span>✓</span> Suporte via WhatsApp</li>
+          <li><span>✓</span> Reavaliação mensal</li>
+        </ul>
+        
+        <div class="destaque-beneficio">
+         <P><strong> trimestral:</strong> R$ 480 (com coqueteleira)</P> 
+         <P><strong> semestral:</strong> R$ 900 (com camiseta e coqueteleira)</P> 
+         <P><strong> anual:</strong> R$ 1680 (com camiseta e coqueteleira)</P>
+        </div>
+        
+        <div class="plano-cta">
+          <a href="https://web.whatsapp.com/send?phone=/5548996718419&text=Olá%20Gabriel%2C%20quero%20o%20plano%20Individual!" 
+             target="_blank" 
+             class="btn-plano">
+            QUERO ESSE PLANO
+          </a>
+        </div>
+      </div>
+      
+      <!-- Plano Em Dupla -->
+      <div class="plano-card destaque">
+        <div class="plano-header">
+          <h3>Em Dupla</h3>
+          <div class="plano-preco">R$ 330<span>/mês</span></div>
+        </div>
+        
+        <ul class="plano-beneficios">
+          <li><span>✓</span> Todos os benefícios do Individual</li>
+          <li><span>✓</span> Para você e mais uma pessoa</li>
+          <li><span>✓</span> Economia de 15% por pessoa</li>
+          <li><span>✓</span> Treinos sincronizados</li>
+          <li><span>✓</span> Motivação em dobro</li>
+        </ul>
+        
+        <div class="destaque-beneficio">
+          <P><strong> trimestral:</strong> R$ 930 (com coqueteleira)</P> 
+          <P><strong> semestral:</strong> R$ 1740 (com camiseta e coqueteleira)</P> 
+          <P><strong> anual:</strong> R$ 3240 (com camiseta e coqueteleira)</P>
+        </div>
+        
+        <div class="plano-cta">
+          <a href="https://web.whatsapp.com/send?phone=/5548996718419&text=Olá%20Gabriel%2C%20quero%20o%20plano%20Em%20Dupla!" 
+             target="_blank" 
+             class="btn-plano">
+            QUERO ESSE PLANO
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <p class="pagamento-info"><strong>Formas de pagamento:</strong> Pix (5% off), boleto, transferência ou cartão (parcelado em até 12x).</p>
+
+  <div class="cta-duvidas">
+    <a href="https://web.whatsapp.com/send?phone=/5548996718419&text=Olá%20Gabriel%2C%20quero%20mais%20informa%C3%A7%C3%B5es%20sobre%20os%20planos!" 
+       target="_blank" 
+       class="btn-duvidas">
+      TENHO DÚVIDAS, FALE COMIGO
+    </a>
+  </div>
+</div>
+</section>
+  <footer>
+    <div class="container">
+      <img src="logo.png" alt="Gabriel Ruchert">
+      <h3>Gabriel Ruchert</h3>
+      <p>Personal Trainer | Especialista em Transformação Corporal</p>
+      <div class="social-links">
+        <a href="#" target="_blank" aria-label="WhatsApp">📱</a>
+        <a href="#" target="_blank" aria-label="Instagram">📷</a>
+        <a href="#" target="_blank" aria-label="YouTube">🎥</a>
+        <a href="#" target="_blank" aria-label="Facebook">💬</a>
+      </div>
+      <p class="copyright">&copy; 2025 Gabriel Ruchert Personal. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const carousel = document.getElementById('results-carousel');
+      const cards = document.querySelectorAll('.result-card');
+      const dotsContainer = document.getElementById('carousel-dots');
+      const prevBtn = document.querySelector('.prev-btn');
+      const nextBtn = document.querySelector('.next-btn');
+      
+      let currentIndex = 0;
+      const cardCount = cards.length;
+      
+      // Criar dots de navegação
+      cards.forEach((_, index) => {
+        const dot = document.createElement('div');
+        dot.classList.add('dot');
+        if (index === 0) dot.classList.add('active');
+        dot.addEventListener('click', () => goToSlide(index));
+        dotsContainer.appendChild(dot);
+      });
+      
+      // Atualizar carrossel
+      function updateCarousel() {
+        carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+        
+        // Atualizar dots ativos
+        document.querySelectorAll('.dot').forEach((dot, index) => {
+          dot.classList.toggle('active', index === currentIndex);
+        });
+      }
+      
+      // Ir para slide específico
+      function goToSlide(index) {
+        currentIndex = index;
+        updateCarousel();
+      }
+      
+      // Slide anterior
+      prevBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex > 0) ? currentIndex - 1 : cardCount - 1;
+        updateCarousel();
+      });
+      
+      // Próximo slide
+      nextBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex < cardCount - 1) ? currentIndex + 1 : 0;
+        updateCarousel();
+      });
+      
+      // Navegação por teclado
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') {
+          prevBtn.click();
+        } else if (e.key === 'ArrowRight') {
+          nextBtn.click();
+        }
+      });
+      
+      // Auto-play (opcional)
+      let autoPlay = setInterval(() => {
+        nextBtn.click();
+      }, 5000);
+      
+      // Pausar auto-play quando o mouse estiver sobre o carrossel
+      const carouselContainer = document.querySelector('.results-carousel');
+      carouselContainer.addEventListener('mouseenter', () => {
+        clearInterval(autoPlay);
+      });
+      
+      carouselContainer.addEventListener('mouseleave', () => {
+        autoPlay = setInterval(() => {
+          nextBtn.click();
+        }, 5000);
+      });
+    });
+    
+  </script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Configuração do carrossel de depoimentos
+    const track = document.getElementById('depoimentos-track');
+    const cards = document.querySelectorAll('.depoimento-card');
+    const dotsContainer = document.getElementById('depoimentos-dots');
+    const prevBtn = document.querySelector('.prev-btn-depoimentos');
+    const nextBtn = document.querySelector('.next-btn-depoimentos');
+    
+    let currentIndex = 0;
+    const cardCount = cards.length;
+    const cardWidth = cards[0].offsetWidth;
+    const gap = 20; // Espaço entre os cards
+    
+    // Criar dots de navegação
+    for (let i = 0; i < cardCount; i++) {
+      const dot = document.createElement('div');
+      dot.classList.add('dot');
+      if (i === 0) dot.classList.add('active');
+      dot.addEventListener('click', () => goToSlide(i));
+      dotsContainer.appendChild(dot);
+    }
+    
+    // Atualizar carrossel
+    function updateCarousel() {
+      const offset = -currentIndex * (cardWidth + gap);
+      track.style.transform = `translateX(${offset}px)`;
+      
+      // Atualizar dots ativos
+      document.querySelectorAll('#depoimentos-dots .dot').forEach((dot, index) => {
+        dot.classList.toggle('active', index === currentIndex);
+      });
+    }
+    
+    // Ir para slide específico
+    function goToSlide(index) {
+      currentIndex = index;
+      updateCarousel();
+    }
+    
+    // Slide anterior - com loop infinito
+    prevBtn.addEventListener('click', () => {
+      currentIndex = (currentIndex === 0) ? cardCount - 1 : currentIndex - 1;
+      updateCarousel();
+    });
+    
+    // Próximo slide - com loop infinito
+    nextBtn.addEventListener('click', () => {
+      currentIndex = (currentIndex === cardCount - 1) ? 0 : currentIndex + 1;
+      updateCarousel();
+    });
+    
+    // Navegação por teclado
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') {
+        prevBtn.click();
+      } else if (e.key === 'ArrowRight') {
+        nextBtn.click();
+      }
+    });
+    
+    // Auto-play (opcional) com loop infinito
+    let autoPlay = setInterval(() => {
+      nextBtn.click();
+    }, 5000);
+    
+    // Pausar auto-play quando o mouse estiver sobre o carrossel
+    const carouselContainer = document.querySelector('.depoimentos-carrossel');
+    carouselContainer.addEventListener('mouseenter', () => {
+      clearInterval(autoPlay);
+    });
+    
+    carouselContainer.addEventListener('mouseleave', () => {
+      autoPlay = setInterval(() => {
+        nextBtn.click();
+      }, 5000);
+    });
+    
+    // Redimensionamento da janela
+    window.addEventListener('resize', () => {
+      updateCarousel();
+    });
+  });
+</script>
+  <script>
+    // Função de rolagem suave aprimorada
+    document.addEventListener('DOMContentLoaded', function() {
+      function smoothScrollTo(target) {
+        const element = document.querySelector(target);
+        if (element) {
+          const offset = 100; // Ajuste de espaçamento
+          const elementPosition = element.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+
+          // Destaque visual
+          element.classList.add('highlight-scroll');
+          setTimeout(() => {
+            element.classList.remove('highlight-scroll');
+          }, 1000);
+        }
+      }
+
+      // Configura o botão COMEÇE AGORA
+      document.getElementById('btn-comece-agora').addEventListener('click', function(e) {
+        e.preventDefault();
+        smoothScrollTo('#planos');
+      });
+
+      // Configura todos os links âncora
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          if(this.getAttribute('href') !== '#') {
+            e.preventDefault();
+            smoothScrollTo(this.getAttribute('href'));
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
+</body>
+</html>
