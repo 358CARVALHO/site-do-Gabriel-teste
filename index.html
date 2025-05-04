@@ -780,7 +780,7 @@
       display: inline-flex;
       width: 60px;
       height: 60px;
-      background: rgba(255,255,255,0.1);
+      background: rgba(17, 17, 17, 0.1);
       border-radius: 50%;
       align-items: center;
       justify-content: center;
@@ -788,7 +788,7 @@
     
     .social-links a:hover {
       color: var(--white);
-      background: #ff6600;
+      background: #000000;
       transform: translateY(-5px);
     }
     
@@ -1168,45 +1168,58 @@ html {
         padding: 30px 20px;
       }
     }
-        /* CTA */
-        .cta {
-      text-align: center;
-      margin: 50px 0 30px;
-      animation: pulse 2s infinite;
-    }
-    
+   /* CTA - Ajustes para iOS */
+.cta {
+    text-align: center;
+    margin: 30px 0; /* Reduzi a margem para mobile */
+    animation: pulse 2s infinite;
+    padding: 0 15px; /* Adiciona padding lateral para evitar tocar nas bordas */
+}
+
+.cta-button {
+    background: var(--primary);
+    color: var(--white);
+    padding: 16px 30px; /* Reduzi o padding para mobile */
+    font-size: 1rem; /* Tamanho de fonte menor para mobile */
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+    font-weight: 600;
+    box-shadow: 0 5px 15px rgba(255,94,0,0.3);
+    border: none;
+    cursor: pointer;
+    animation: pulse 2s infinite;
+    -webkit-tap-highlight-color: transparent; /* Remove o highlight ao tocar no iOS */
+    min-width: 200px; /* Largura mínima para evitar quebras */
+}
+
+/* Media Queries para ajustes específicos */
+@media (max-width: 480px) {
     .cta-button {
-      background: var(--primary);
-      color: var(--white);
-      padding: 18px 40px;
-      font-size: 1.2rem;
-      border-radius: 50px;
-      text-decoration: none;
-      transition: all 0.3s ease;
-      display: inline-block;
-      font-weight: 600;
-      box-shadow: 0 5px 15px rgba(255,94,0,0.3);
-      border: none;
-      cursor: pointer;
-      animation: pulse 2s infinite;
+        padding: 14px 25px;
+        font-size: 0.9rem;
+        width: 90%; /* Ocupa quase toda a largura */
+        max-width: 280px; /* Limita a largura máxima */
     }
     
-    .cta-button:hover {
-      background: var(--primary-dark);
-      transform: translateY(-3px);
-      box-shadow: 0 8px 20px rgba(255,94,0,0.4);
+    .cta {
+        margin: 20px 0;
     }
-    
-    .cta-pulse {
-      animation: pulse 2s infinite;
-      display: inline-block;
-    }
-    
-    @keyframes pulse {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.05); }
-      100% { transform: scale(1); }
-    }
+}
+
+/* Ajustes para hover que também funcionam como active no mobile */
+.cta-button:hover, .cta-button:active {
+    background: var(--primary-dark);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(255,94,0,0.4);
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
       /* ESTILOS PARA OS BENEFÍCIOS (adicione ao seu CSS) */
   .beneficios-section {
     padding: 60px 20px;
@@ -1509,42 +1522,52 @@ html {
     <section>
       <div class="section-content">
         <div class="benefits-section">
-          <h2>🚀 O que você vai conquistar:</h2>
+          <h2>O que você vai conquistar:</h2>
           <div class="benefits-grid">
             <div class="benefit-card">
-              <div class="benefit-icon"></div>
-              <h3>Treino 100% Personalizado</h3>
-              <p>Entregue pelo aplicativo exclusivo ou em planilha</p>
+              <div class="benefit-icon"></div> 
+              <img src="C:\Users\marie\OneDrive\Área de Trabalho\site gabriel\treino100.png" alt="Ícone de benefício" width="50">
+              <h3>Treino 100% personalizado</h3>
+              <p>Entregue pelo aplicativo exclusivo ou em planilha.</p>
             </div>
             <div class="benefit-card">
               <div class="benefit-icon"></div>
+              <img src="C:\Users\marie\OneDrive\Área de Trabalho\site gabriel\app completo.png" alt="Ícone de benefício" width="50">
               <h3>App completo</h3>
-              <p>com videos demonstrativos</p>
+              <p>Com vídeos demonstrativos.</p>
             </div>
             <div class="benefit-card">
               <div class="benefit-icon"></div>
-              <h3>Flexibilidade de Duração</h3>
-              <p>planos de 1, 3, 6 ou 12 meses, adaptáveis ao seu momento.</p>
+              <img src="C:\Users\marie\OneDrive\Área de Trabalho\site gabriel\flexibilidade.png" alt="Ícone de benefício" width="50">
+              <h3>Flexibilidade de duração</h3>
+              <p>Planos de 1, 3, 6 ou 12 meses, adaptáveis ao seu momento.</p>
             </div>
             <div class="benefit-card">
               <div class="benefit-icon"></div>
-              <h3>Entrega Rápida </h3>
-              <p> plano pronto em até 5 dias úteis + suporte contínuo via WhatsApp.</p>
+              <img src="C:\Users\marie\OneDrive\Área de Trabalho\site gabriel\entrega rapida.png" alt="Ícone de benefício" width="50">
+              <h3>Entrega rápida </h3>
+              <p> Plano pronto em até 5 dias úteis + suporte contínuo via WhatsApp.</p>
             </div>
             <div class="benefit-card">
               <div class="benefit-icon"></div>
+              <img src="C:\Users\marie\OneDrive\Área de Trabalho\site gabriel\acompanhamento online.png" alt="Ícone de benefício" width="50">
               <h3>Acompanhamento online </h3>
-              <p>treine de onde estiver, na academia ou no conforto de sua casa.</p>
+              <p>Treine de onde estiver, na academia ou no conforto de sua casa.</p>
             </div>
             <div class="benefit-card">
               <div class="benefit-icon"></div>
+              <img src="C:\Users\marie\OneDrive\Área de Trabalho\site gabriel\avaliacao fisica.png" alt="Ícone de benefício" width="50">
               <h3>Avaliação física e postural completa</h3>
-              <p>controle de medidas, análise de postura, identificação de desequilíbrios e acompanhamento detalhado da sua evolução.</p>
+              <p>Controle de medidas, análise de postura, identificação de desequilíbrios e acompanhamento detalhado da sua evolução.</p>
             </div>
           </div>
         </div>
+        
+        <h3 style="font-size: 35px;">Como funciona:</h3>
+        <img src="Escolha seu plano.png" style="display: block; margin: 0 auto; max-width: 100%;">
+
         <div class="before-after">
-          <h2>Resultados dos Meus Alunos</h2>
+          <h2>Resultados dos meus alunos</h2>
           <div class="results-carousel">
             <div class="results-container" id="results-carousel">
               <div class="result-card">
@@ -1582,8 +1605,8 @@ html {
             </div>
           </div>
         </div>
-        <div class="container">
-          <section class="numeros-section">
+     
+          <div class="numeros-section">
             <h2>Nossos números e História </h2> 
             <p class="section-subtitle">Transformando vidas através do treinamento personalizado.</p>
           
@@ -1595,54 +1618,53 @@ html {
               <div class="numeros-grid">
                 <div class="numero-card">
                   <div class="numero-value">+5</div>
-                  <div class="numero-title">paises</div>
-                  <div class="numero-desc">Atendendo alunos ao redor do mundo</div>
+                  <div class="numero-title">Países</div>
+                  <div class="numero-desc">Atendendo alunos ao redor do mundo.</div>
                 </div>
                 <div class="numero-card">
                   <div class="numero-value">+4</div>
-                  <div class="numero-title">anos de experiencia</div>
-                  <div class="numero-desc">transformando corpos e vidas</div>
+                  <div class="numero-title">Anos de experiência</div>
+                  <div class="numero-desc">transformando corpos e vidas.</div>
                 </div>
                 <div class="numero-card">
                   <div class="numero-value">+100</div>
-                  <div class="numero-title">alunos</div>
-                  <div class="numero-desc">Mais de cem pessoas já transformaram seus corpos com meu método</div>
+                  <div class="numero-title">Alunos</div>
+                  <div class="numero-desc">Já transformaram seus corpos com meu método.</div>
                 </div>
                 <div class="numero-card">
                   <div class="numero-value">100%</div>
                   <div class="numero-title">Online</div>
-                  <div class="numero-desc">Atendimento remoto com resultados comprovados</div>
+                  <div class="numero-desc">Atendimento remoto com resultados comprovados.</div>
                 </div>
-              </div>
               </div>
               <div class="cta-numeros">
                 <!-- Botão ou chamada final -->
               </div>
             </div>
-
+          </div>
             <div class="beneficios-section">
-              <h2>🌟 Benefícios Exclusivos</h2>
+              <h2 > Benefícios exclusivos</h2> 
               
               <div class="beneficios-grid">
                 <!-- Bloco 1 -->
                 <div class="beneficio-card">
-                  <div class="beneficio-icon">💰</div>
-                  <h3>20% OFF em Suplementos</h3>
+                  <img src="C:\Users\marie\OneDrive\Área de Trabalho\site gabriel\off em suple.png" alt="Ícone de benefício" width="50" >
+                  <h3>20% OFF em suplementos</h3>
                   <p>Desconto exclusivo na <strong>Nutriblue</strong> usando o cupom: <span class="destaque-cupom">GABRIELPERSONAL</span></p>
                 </div>
                 
                 <!-- Bloco 2 -->
                 <div class="beneficio-card">
-                  <div class="beneficio-icon">👩‍⚕️</div>
-                  <h3>Parcerias Profissionais</h3>
-                  <p>Descontos em <strong>nutricionista, psicóloga, massoterapeuta</strong> e salão de beleza parceiros</p>
+                  <img src="C:\Users\marie\OneDrive\Área de Trabalho\site gabriel\parceiros.png" alt="Ícone de benefício" width="50">
+                  <h3>Parcerias profissionais</h3>
+                  <p>Descontos em <strong>nutricionista, psicóloga, massoterapeuta</strong> e salão de beleza parceiros.</p>
                 </div>
                 
                 <!-- Bloco 3 -->
                 <div class="beneficio-card">
-                  <div class="beneficio-icon">🎁</div>
-                  <h3>Brindes Exclusivos de acordo com os planos</h3>
-                  <p><strong>Coqueteleira ou Camiseta</strong></p>
+                  <img src="C:\Users\marie\OneDrive\Área de Trabalho\site gabriel\brindes.png" alt="Ícone de benefício" width="50">
+                  <h3>Brindes exclusivos de acordo com os planos.</h3>
+                  <p><strong>Coqueteleira ou camiseta.</strong></p>
                 </div>
               </div>
             </div>
@@ -1661,11 +1683,7 @@ html {
                   </ul>
                   
                   <div class="cta">
-                    <a href="https://web.whatsapp.com/send?phone=/5548996718419&text=Olá%20Gabriel%2C%20quero%20mais%20informa%C3%A7%C3%B5es%20sobre%20o%20plano%20individual!" 
-                       target="_blank" 
-                       class="btn-destaque">
-                      QUERO ME TRANSFORMAR AGORA
-                    </a>
+                    <a href="#planos"  class="btn-destaque">Quero me transformar</a>
                   </div>
                 </div>
                 
@@ -1694,7 +1712,7 @@ html {
                 <p style="font-size: 25px;"> vou te ajudar a chegar lá! 💪</p>
 
                 <!-- BOTÃO COM ID ADICIONADO -->
-                <a href="#planos" class="btn-comece-agora" id="btn-comece-agora">Agende sua consultoria agora!</a>
+                <a href="#planos" class="btn-comece-agora" id="btn-comece-agora">Agende sua consultoria</a>
               </div>
               <div class="about-image">
                 <img src="foto_sobremim.jpg" alt="Gabriel Ruchert treinando">
@@ -1706,7 +1724,7 @@ html {
   
     <div class="depoimentos-container">
       <div class="depoimentos-title">
-        <h2>📢 O que meus alunos dizem</h2>
+        <h2> O que meus alunos dizem: </h2>
         <p>Resultados reais de pessoas reais que confiaram no meu método</p>
       </div>
       
@@ -1746,7 +1764,7 @@ html {
       </div>
   </div>
   <div class="section-content">
-    <h2 id="planos">💰 Planos de Atendimento</h2>
+    <h2 id="planos">Planos de Atendimento</h2>
     
     <div class="planos-tabs">
       <!-- Abas de navegação -->
@@ -1766,8 +1784,9 @@ html {
             <div class="plano-card">
               <div class="plano-header">
                 <h3>Individual</h3>
-                <div class="plano-preco">R$ 180,00<span>/mes</span></div>
-                <span> no pix ou 2x de R$190,00 no crédito</span>
+                <div class="plano-preco">R$ 180,00<span>/mês</span></div>
+                <span> No crédito: R$190,00 até 2x</span>
+                <p class="economia">Desconto de 5,26% no Pix.</p>
               </div>
               
               <ul class="plano-beneficios">
@@ -1779,7 +1798,7 @@ html {
               </ul>
               
               <div class="plano-cta">
-                <a href="https://web.whatsapp.com/send?phone=/5548996718419&text=Olá%20Gabriel%2C%20quero%20o%20plano%20Individual%20Mensal!" 
+                <a href="https://web.whatsapp.com/send?phone=/554896433673&text=Olá%20Gabriel%2C%20quero%20o%20plano%20Individual%20Mensal!" 
                    target="_blank" 
                    class="btn-plano">
                   QUERO ESSE PLANO
@@ -1805,12 +1824,12 @@ html {
               </ul>
               
               <div class="plano-cta">
-                <a href="https://web.whatsapp.com/send?phone=/5548996718419&text=Olá%20Gabriel%2C%20quero%20o%20plano%20Dupla%20Mensal!" 
+                <a href="https://web.whatsapp.com/send?phone=/554896433673&text=Olá%20Gabriel%2C%20quero%20o%20plano%20Dupla%20Mensal!" 
                    target="_blank" 
                    class="btn-plano">
                   QUERO ESSE PLANO
                 </a>
-              </div>
+            </div>
             </div>
           </div>
         </div>
@@ -1835,7 +1854,7 @@ html {
               </ul>
               
               <div class="plano-cta">
-                <a href="https://web.whatsapp.com/send?phone=/5548996718419&text=Olá%20Gabriel%2C%20quero%20o%20plano%20Individual%20Trimestral!" 
+                <a href="https://web.whatsapp.com/send?phone=/554896433673&text=Olá%20Gabriel%2C%20quero%20o%20plano%20Individual%20Trimestral!" 
                    target="_blank" 
                    class="btn-plano">
                   QUERO ESSE PLANO
@@ -1860,7 +1879,7 @@ html {
               </ul>
               
               <div class="plano-cta">
-                <a href="https://web.whatsapp.com/send?phone=/5548996718419&text=Olá%20Gabriel%2C%20quero%20o%20plano%20Dupla%20Trimestral!" 
+                <a href="https://web.whatsapp.com/send?phone=/554896433673&text=Olá%20Gabriel%2C%20quero%20o%20plano%20Dupla%20Trimestral!" 
                    target="_blank" 
                    class="btn-plano">
                   QUERO ESSE PLANO
@@ -1890,7 +1909,7 @@ html {
               </ul>
               
               <div class="plano-cta">
-                <a href="https://web.whatsapp.com/send?phone=/5548996718419&text=Olá%20Gabriel%2C%20quero%20o%20plano%20Individual%20Semestral!" 
+                <a href="https://web.whatsapp.com/send?phone=/554896433673&text=Olá%20Gabriel%2C%20quero%20o%20plano%20Individual%20Semestral!" 
                    target="_blank" 
                    class="btn-plano">
                   QUERO ESSE PLANO
@@ -1915,7 +1934,7 @@ html {
               </ul>
               
               <div class="plano-cta">
-                <a href="https://web.whatsapp.com/send?phone=/5548996718419&text=Olá%20Gabriel%2C%20quero%20o%20plano%20Dupla%20Semestral!" 
+                <a href="https://web.whatsapp.com/send?phone=/554896433673&text=Olá%20Gabriel%2C%20quero%20o%20plano%20Dupla%20Semestral!" 
                    target="_blank" 
                    class="btn-plano">
                   QUERO ESSE PLANO
@@ -1945,7 +1964,7 @@ html {
               </ul>
               
               <div class="plano-cta">
-                <a href="https://web.whatsapp.com/send?phone=/5548996718419&text=Olá%20Gabriel%2C%20quero%20o%20plano%20Individual%20Anual!" 
+                <a href="https://web.whatsapp.com/send?phone=/554896433673&text=Olá%20Gabriel%2C%20quero%20o%20plano%20Individual%20Anual!" 
                    target="_blank" 
                    class="btn-plano">
                   QUERO ESSE PLANO
@@ -1970,7 +1989,7 @@ html {
               </ul>
               
               <div class="plano-cta">
-                <a href="https://web.whatsapp.com/send?phone=/5548996718419&text=Olá%20Gabriel%2C%20quero%20o%20plano%20Dupla%20Anual!" 
+                <a href="https://web.whatsapp.com/send?phone=/554896433673&text=Olá%20Gabriel%2C%20quero%20o%20plano%20Dupla%20Anual!" 
                    target="_blank" 
                    class="btn-plano">
                   QUERO ESSE PLANO
@@ -1985,7 +2004,7 @@ html {
     <p class="pagamento-info"><strong>Formas de pagamento:</strong>  Pix, boleto, transferência ou cartão (até 12x)</p>
   
     <div class="cta-duvidas">
-      <a href="https://web.whatsapp.com/send?phone=/5548996718419&text=Olá%20Gabriel%2C%20quero%20mais%20informa%C3%A7%C3%B5es%20sobre%20os%20planos!" 
+      <a href="https://web.whatsapp.com/send?phone=/554896433673&text=Olá%20Gabriel%2C%20quero%20mais%20informa%C3%A7%C3%B5es%20sobre%20os%20planos!" 
          target="_blank" 
          class="btn-duvidas">
         TENHO DÚVIDAS, FALE COMIGO
@@ -1999,10 +2018,12 @@ html {
       <h3>Gabriel Ruchert</h3>
       <p>Personal Trainer | Especialista em Transformação Corporal</p>
       <div class="social-links">
-        <a href="#" target="_blank" aria-label="WhatsApp">📱</a>
-        <a href="#" target="_blank" aria-label="Instagram">📷</a>
-        <a href="#" target="_blank" aria-label="YouTube">🎥</a>
-        <a href="#" target="_blank" aria-label="Facebook">💬</a>
+        <a href="https://web.whatsapp.com/send?phone=/554896433673&text=Olá%20Gabriel%2C%20quero%20mais%20informa%C3%A7%C3%B5es%20sobre%20os%20planos!" target="_blank" aria-label="WhatsApp">
+          <img src="whatsapp.png" alt="WhatsApp" style="width: 50px; height: auto;">
+      </a>
+      <a href="https://www.instagram.com/gabrielruchertpersonal/" target="_blank" aria-label="Instagram">
+          <img src="instagram.png" alt="Instagram" style="width: 50px; height: auto;">
+      </a>
       </div>
       <p class="copyright">&copy; 2025 Gabriel Ruchert Personal. Todos os direitos reservados.</p>
     </div>
