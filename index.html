@@ -277,6 +277,67 @@
   }
 }
 /* NOVOS ESTILOS PARA A SEÇÃO DE PLANOS */
+/* Estilos para o sistema de abas */
+.planos-tabs {
+  margin-top: 30px;
+}
+
+.tabs-header {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.tab-btn {
+  padding: 12px 25px;
+  margin: 0 5px 10px;
+  background: #f5f5f5;
+  border: none;
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+
+.tab-btn.active {
+  background: #ff6600;
+  color: white;
+}
+
+.tab-btn:hover:not(.active) {
+  background: #e0e0e0;
+}
+
+.tab-pane {
+  display: none;
+}
+
+.tab-pane.active {
+  display: block;
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.plano-header .economia {
+  color: #ff6600;
+  font-size: 0.9rem;
+  margin-top: 5px;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .tab-btn {
+    padding: 10px 15px;
+    font-size: 0.9rem;
+    margin: 0 3px 5px;
+  }
+}
 .planos-container {
   display: flex;
   justify-content: center;
@@ -498,116 +559,129 @@
     }
     /* ESTILOS PARA CARROSSEL DE RESULTADOS */
     .before-after {
-      margin: 60px 0;
-      position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  .before-after h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #333;
+  }
+  
+  .results-carousel {
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+  }
+  
+  .results-container {
+    display: flex;
+    transition: transform 0.5s ease;
+  }
+  
+  .result-card {
+    min-width: 100%;
+    box-sizing: border-box;
+    padding: 0 10px;
+  }
+  
+  .result-images img {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    margin: 0 auto;
+    display: block;
+  }
+  
+  .carousel-nav {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+  }
+  
+  .carousel-btn {
+    background: rgba(255,255,255,0.7);
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 10px 15px;
+    border-radius: 50%;
+    margin: 0 20px;
+    z-index: 10;
+    transition: all 0.3s ease;
+  }
+  
+  .carousel-btn:hover {
+    background: rgba(0,0,0,0.7);
+    color: white;
+  }
+  
+  .carousel-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #ccc;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .dot.active {
+    background: #333;
+  }
+  @media (max-width: 768px) {
+    .before-after {
+      padding: 0.5rem;
     }
     
-    .before-after h2 {
-      text-align: center;
+    .result-images img {
+      max-height: 70vh;
+      border-radius: 6px;
     }
     
+    .carousel-btn {
+      padding: 6px 10px;
+      margin: 0 2px;
+    }
+    
+    .carousel-dots {
+      margin-top: 10px;
+    }
+  }
+
+  @media (max-width: 480px) {
     .results-carousel {
-      position: relative;
-      max-width: 1000px;
-      margin: 40px auto 0;
-      overflow: hidden;
-    }
-    
-    .results-container {
-      display: flex;
-      transition: transform 0.5s ease;
       width: 100%;
     }
     
     .result-card {
-      min-width: 100%;
-      background: var(--white);
-      border-radius: 15px;
-      overflow: hidden;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-      transition: all 0.3s ease;
-      margin: 0 10px;
-    }
-    
-    .result-images {
-      display: flex;
-      position: relative;
+      padding: 0;
     }
     
     .result-images img {
-      width: 100%;
-      height: 350px;
-      object-fit: cover;
-    }
-    
-    .result-info {
-      padding: 25px;
-      text-align: center;
-    }
-    
-    .result-info h3 {
-      margin: 0 0 15px;
-      color: var(--secondary);
-    }
-    
-    .result-info p {
-      color: #666;
-      font-size: 1rem;
-      line-height: 1.7;
-    }
-    
-    .carousel-nav {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      padding: 0 20px;
-      z-index: 10;
+      max-height: 60vh;
+      border-radius: 4px;
     }
     
     .carousel-btn {
-      background: rgba(0,0,0,0.7);
-      color: white;
-      border: none;
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
       font-size: 1.5rem;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: all 0.3s ease;
+      padding: 5px 8px;
     }
-    
-    .carousel-btn:hover {
-      background: #ff6600;
-      transform: scale(1.1);
-    }
-    
-    .carousel-dots {
-      display: flex;
-      justify-content: center;
-      margin-top: 20px;
-    }
-    
-    .dot {
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-      background: #ddd;
-      margin: 0 5px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-    
-    .dot.active {
-      background: #ff6600;
-      transform: scale(1.2);
-    }
-    
+  }
     /* DESTAQUE */
     .destaque {
       background: linear-gradient(135deg, #000000, #ff6600);
@@ -743,7 +817,12 @@
       min-width: 300px;
       padding: 40px;
     }
-    
+   
+    .specialty-item {
+       font-size: 20px; /* ou o tamanho que preferir */
+       line-height: 1,8; /* espaçamento entre linhas */
+    }
+
     .about-image {
       flex: 1;
       min-width: 300px;
@@ -757,28 +836,34 @@
       object-fit: cover;
     }
     /* Botão Comece Agora */
-.btn-comece-agora {
+    .btn-comece-agora {
     display: inline-block;
-    padding: 15px 30px;
-    background-color: #ff6600;
+    padding: 18px 40px;
+    background: linear-gradient(45deg, #ff6600, #ff8c00); /* Gradiente laranja */
     color: white;
     text-decoration: none;
     border-radius: 50px;
-    font-weight: 600;
+    font-weight: 700;
     margin: 30px auto;
     transition: all 0.3s ease;
     text-align: center;
-    font-size: 1.1rem;
-    box-shadow: 0 5px 15px rgba(255, 102, 0, 0.3);
+    font-size: 1.3rem;
+    box-shadow: 0 5px 15px rgba(255, 102, 0, 0.4);
     border: none;
     cursor: pointer;
     width: fit-content;
+    animation: pulse 2s infinite; /* Efeito de pulsar */
 }
 
 .btn-comece-agora:hover {
-    background-color: #e65c00;
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(255, 102, 0, 0.4);
+    transform: translateY(-3px) scale(1.05); /* Aumenta levemente no hover */
+    box-shadow: 0 10px 25px rgba(255, 102, 0, 0.5);
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
 }
 
 html {
@@ -1087,6 +1172,7 @@ html {
         .cta {
       text-align: center;
       margin: 50px 0 30px;
+      animation: pulse 2s infinite;
     }
     
     .cta-button {
@@ -1102,6 +1188,7 @@ html {
       box-shadow: 0 5px 15px rgba(255,94,0,0.3);
       border: none;
       cursor: pointer;
+      animation: pulse 2s infinite;
     }
     
     .cta-button:hover {
@@ -1339,6 +1426,70 @@ html {
       text-align: center;
     }
   }
+  /* Estilos para a seção de benefícios com imagem */
+.benefits-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+}
+
+.benefits-image {
+  flex: 1;
+  min-width: 300px;
+  position: relative;
+  align-self: stretch;
+}
+
+.foto-transformacao {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.foto-transformacao:hover {
+  transform: scale(1.02);
+}
+
+.benefits-text {
+  flex: 2;
+  min-width: 300px;
+}
+
+.benefit-icon i {
+  font-size: 2.5rem;
+  color: #ff6600;
+  margin-bottom: 15px;
+}
+
+/* Responsivo */
+@media (max-width: 992px) {
+  .benefits-content {
+    flex-direction: column;
+  }
+  
+  .benefits-image {
+    width: 100%;
+    height: 300px;
+    margin-bottom: 30px;
+  }
+  
+  .foto-transformacao {
+    height: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .benefits-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .benefits-image {
+    height: 250px;
+  }
+}
   </style>
 </head>
 <body>
@@ -1354,7 +1505,6 @@ html {
       </div>
     </div>
   </header>
-
   <div class="container">
     <section>
       <div class="section-content">
@@ -1364,34 +1514,32 @@ html {
             <div class="benefit-card">
               <div class="benefit-icon"></div>
               <h3>Treino 100% Personalizado</h3>
-              <p>Plano de treino feito sob medida para seus objetivos e necessidades, enviado via PDF ou aplicativo.</p>
+              <p>Entregue pelo aplicativo exclusivo ou em planilha</p>
             </div>
             <div class="benefit-card">
               <div class="benefit-icon"></div>
-              <h3>Vídeos Demonstrativos</h3>
-              <p>Acesso a vídeos explicativos de todos os exercícios para garantir a execução correta.</p>
+              <h3>App completo</h3>
+              <p>com videos demonstrativos</p>
             </div>
             <div class="benefit-card">
               <div class="benefit-icon"></div>
               <h3>Flexibilidade de Duração</h3>
-              <p>Programas de 1, 3, 6 ou 12 meses, adaptados ao seu ritmo e metas.</p>
+              <p>planos de 1, 3, 6 ou 12 meses, adaptáveis ao seu momento.</p>
             </div>
             <div class="benefit-card">
               <div class="benefit-icon"></div>
-              <h3>Entrega Rápida e Suporte Contínuo</h3>
-              <p> Plano entregue em até 5 dias úteis, com ajustes e dúvidas resolvidos online a qualquer momento.</p>
+              <h3>Entrega Rápida </h3>
+              <p> plano pronto em até 5 dias úteis + suporte contínuo via WhatsApp.</p>
             </div>
             <div class="benefit-card">
               <div class="benefit-icon"></div>
-              <h3>Atendimento Global </h3>
-              <p>Acompanhamento para alunos de diferentes fusos horários, com respostas rápidas via chat.</p>
+              <h3>Acompanhamento online </h3>
+              <p>treine de onde estiver, na academia ou no conforto de sua casa.</p>
             </div>
             <div class="benefit-card">
               <div class="benefit-icon"></div>
-              <h3>Avaliação Completa</h3>
-              <p>namnese detalhada (rotina, histórico, lesões).</p>
-              <p> Avaliação postural (por fotos) para corrigir desalinhamentos.</p>
-              <p> Avaliação antropométrica (gordura x massa magra).</p>
+              <h3>Avaliação física e postural completa</h3>
+              <p>controle de medidas, análise de postura, identificação de desequilíbrios e acompanhamento detalhado da sua evolução.</p>
             </div>
           </div>
         </div>
@@ -1401,41 +1549,25 @@ html {
             <div class="results-container" id="results-carousel">
               <div class="result-card">
                 <div class="result-images">
-                  <img src="resultado_1.png" alt="Resultado 1">
-                </div>
-                <div class="result-info">
-                  <h3>Marcos, 32 anos</h3>
-                  <p>"Perdi 12kg de gordura e ganhei massa muscular com o método do Gabriel!"</p>
+                  <img src="resultado_1.png" alt="Antes e Depois - Resultado 1" loading="lazy">
                 </div>
               </div>
               
               <div class="result-card">
                 <div class="result-images">
-                  <img src="resultado_2.png" alt="Resultado 2">
-                </div>
-                <div class="result-info">
-                  <h3>Ana, 28 anos</h3>
-                  <p>"Consegui definir meu corpo para o verão como nunca imaginei possível!"</p>
+                  <img src="resultado_2.png" alt="Antes e Depois - Resultado 2" loading="lazy">
                 </div>
               </div>
               
               <div class="result-card">
                 <div class="result-images">
-                  <img src="resultado_3.png" alt="Resultado 3">
-                </div>
-                <div class="result-info">
-                  <h3>Carlos, 45 anos</h3>
-                  <p>"Aos 45 anos, recuperei o corpo que tinha aos 30. Melhor investimento da minha vida!"</p>
+                  <img src="resultado_3.png" alt="Antes e Depois - Resultado 3" loading="lazy">
                 </div>
               </div>
-              
+
               <div class="result-card">
                 <div class="result-images">
-                  <img src="resultado_4.png" alt="Resultado 4">
-                </div>
-                <div class="result-info">
-                  <h3>Juliana, 35 anos</h3>
-                  <p>"Em 3 meses alcancei resultados que não consegui em 2 anos de academia sozinha!"</p>
+                  <img src="resultado_4.png" alt="Antes e Depois - Resultado 3" loading="lazy">
                 </div>
               </div>
             </div>
@@ -1452,7 +1584,7 @@ html {
         </div>
         <div class="container">
           <section class="numeros-section">
-            <h2>Nossos números e História</h2>
+            <h2>Nossos números e História </h2> 
             <p class="section-subtitle">Transformando vidas através do treinamento personalizado.</p>
           
             <div class="numeros-content">
@@ -1464,17 +1596,17 @@ html {
                 <div class="numero-card">
                   <div class="numero-value">+5</div>
                   <div class="numero-title">paises</div>
-                  <div class="numero-desc">Atendemos alunos em 5 países diferentes ao redor do mundo</div>
+                  <div class="numero-desc">Atendendo alunos ao redor do mundo</div>
                 </div>
                 <div class="numero-card">
                   <div class="numero-value">+4</div>
                   <div class="numero-title">anos de experiencia</div>
-                  <div class="numero-desc">De experiência transformando corpos e vidas</div>
+                  <div class="numero-desc">transformando corpos e vidas</div>
                 </div>
                 <div class="numero-card">
-                  <div class="numero-value">+1000</div>
+                  <div class="numero-value">+100</div>
                   <div class="numero-title">alunos</div>
-                  <div class="numero-desc">Mais de mil pessoas já transformaram seus corpos com nosso método</div>
+                  <div class="numero-desc">Mais de cem pessoas já transformaram seus corpos com meu método</div>
                 </div>
                 <div class="numero-card">
                   <div class="numero-value">100%</div>
@@ -1509,8 +1641,8 @@ html {
                 <!-- Bloco 3 -->
                 <div class="beneficio-card">
                   <div class="beneficio-icon">🎁</div>
-                  <h3>Brindes Exclusivos</h3>
-                  <p><strong>Coqueteleira + Camiseta</strong> para planos semestrais ou anuais</p>
+                  <h3>Brindes Exclusivos de acordo com os planos</h3>
+                  <p><strong>Coqueteleira ou Camiseta</strong></p>
                 </div>
               </div>
             </div>
@@ -1519,12 +1651,13 @@ html {
               <div class="destaque-container">
                 <div class="destaque-texto">
                   <h2>Por que escolher meu método?</h2>
-                  <p>Com mais de 8 anos de experiência e centenas de alunos transformados, desenvolvi um método que se adapta à sua rotina, objetivos e limitações. Não importa se você treina em casa ou na academia, vou criar o plano perfeito para você!</p>
+                  <p>Com mais de 4 anos de experiência e centenas de alunos transformados, desenvolvi um método que se adapta à sua rotina, objetivos e limitações. Não importa se você treina em casa ou na academia, vou criar o plano ideal para você!</p>
                   
                   <ul class="destaque-lista">
-                    <li><span>✔</span> Treinos personalizados para seu biotipo</li>
-                    <li><span>✔</span> Adaptável a qualquer rotina</li>
-                    <li><span>✔</span> Suporte diário via WhatsApp</li>
+                    <li><span>✔</span> Treino inteligente, pensado para você</li>
+                    <li><span>✔</span> Se adapta à sua rotina – sem desculpas, sem complicação</li>
+                    <li><span>✔</span> Funciona tanto em casa quanto na academia</li>
+                    <li><span>✔</span> Suporte 24h via WhatsApp – você nunca treina sozinho</li>
                   </ul>
                   
                   <div class="cta">
@@ -1545,18 +1678,23 @@ html {
       
             <div class="about-content">
               <div class="about-text">
-                <h2>Quem é Gabriel</h2>
-                <p>Sou um Personal Trainer apaixonado por transformar vidas através do exercício físico. Com mais de 8 anos de experiência na área, já ajudei centenas de pessoas a alcançarem seus objetivos físicos e melhorarem sua saúde.</p>
-                <p>Minha abordagem vai além dos exercícios - acredito que a verdadeira transformação acontece quando combinamos treino científico com hábitos saudáveis e mentalidade positiva. Meu propósito é ajudar você a construir uma relação saudável com seu corpo e com a atividade física.</p>
-                <p>Formado em Educação Física e com especializações em Treinamento Funcional e Nutrição Esportiva, estou sempre me atualizando para trazer os melhores métodos para meus alunos.</p>
-                <ul>
-                  <li><strong>8+ anos</strong> de experiência como Personal Trainer</li>
-                  <li><strong>500+ alunos</strong> transformados</li>
-                  <li>Especializado em <strong>Treinamento Funcional</strong> e <strong>Nutrição Esportiva</strong></li>
-                  <li><strong>Especialista em glúteos</strong></li>
-                </ul>
+                <h2 style="font-size: 35px;">Quem é Gabriel Ruchert</h2>
+
+                <div class="specialties-section">
+                  <div class="specialties-grid">
+                    
+                    <div class="specialty-item">🏋️ +4 anos como Personal Trainer</div>
+                    <div class="specialty-item">📚 Pós-graduando em Musculação Avançada pela Faculdade UNIGUAÇU.</strong></div>
+                    <div class="specialty-item">🔥 Especialista em treinamento feminino com ênfase em glúteos.</strong></div>
+                  </div>
+                </div>
+
+
+                <h3 style="font-size: 30px;"></h3style>Vamos juntos nessa jornada?</h3>
+                <p style="font-size: 25px;"> vou te ajudar a chegar lá! 💪</p>
+
                 <!-- BOTÃO COM ID ADICIONADO -->
-                <a href="#planos" class="btn-comece-agora" id="btn-comece-agora">COMEÇE AGORA</a>
+                <a href="#planos" class="btn-comece-agora" id="btn-comece-agora">Agende sua consultoria agora!</a>
               </div>
               <div class="about-image">
                 <img src="foto_sobremim.jpg" alt="Gabriel Ruchert treinando">
@@ -1607,83 +1745,253 @@ html {
         </div>
       </div>
   </div>
- <div class="section-content">
-  <h2 id="planos">💰 Planos de Atendimento</h2>
-  
-  <div class="planos-container"> <!-- Novo container centralizado -->
-    <div class="planos-grid">
-      <!-- Plano Individual -->
-      <div class="plano-card">
-        <div class="plano-header">
-          <h3>Individual</h3>
-          <div class="plano-preco">R$ 180<span>/mês</span></div>
-        </div>
-        
-        <ul class="plano-beneficios">
-          <li><span>✓</span> Treino 100% personalizado</li>
-          <li><span>✓</span> Vídeos demonstrativos</li>
-          <li><span>✓</span> Avaliação física inicial</li>
-          <li><span>✓</span> Suporte via WhatsApp</li>
-          <li><span>✓</span> Reavaliação mensal</li>
-        </ul>
-        
-        <div class="destaque-beneficio">
-         <P><strong> trimestral:</strong> R$ 480 (com coqueteleira)</P> 
-         <P><strong> semestral:</strong> R$ 900 (com camiseta e coqueteleira)</P> 
-         <P><strong> anual:</strong> R$ 1680 (com camiseta e coqueteleira)</P>
-        </div>
-        
-        <div class="plano-cta">
-          <a href="https://web.whatsapp.com/send?phone=/5548996718419&text=Olá%20Gabriel%2C%20quero%20o%20plano%20Individual!" 
-             target="_blank" 
-             class="btn-plano">
-            QUERO ESSE PLANO
-          </a>
-        </div>
+  <div class="section-content">
+    <h2 id="planos">💰 Planos de Atendimento</h2>
+    
+    <div class="planos-tabs">
+      <!-- Abas de navegação -->
+      <div class="tabs-header">
+        <button class="tab-btn " data-tab="mensal">Mensal</button>
+        <button class="tab-btn" data-tab="trimestral">Trimestral</button>
+        <button class="tab-btn" data-tab="semestral">Semestral</button>
+        <button class="tab-btn active" data-tab="anual">Anual</button>
       </div>
       
-      <!-- Plano Em Dupla -->
-      <div class="plano-card destaque">
-        <div class="plano-header">
-          <h3>Em Dupla</h3>
-          <div class="plano-preco">R$ 330<span>/mês</span></div>
+      <!-- Conteúdo das abas -->
+      <div class="tabs-content">
+        <!-- Plano Mensal -->
+        <div class="tab-pane " id="mensal">
+          <div class="planos-grid">
+            <!-- Individual Mensal -->
+            <div class="plano-card">
+              <div class="plano-header">
+                <h3>Individual</h3>
+                <div class="plano-preco">R$ 180,00<span>/mes</span></div>
+                <span> no pix ou 2x de R$190,00 no crédito</span>
+              </div>
+              
+              <ul class="plano-beneficios">
+                <li><span>✓</span> Treino 100% personalizado</li>
+                <li><span>✓</span> Vídeos demonstrativos</li>
+                <li><span>✓</span> Avaliação física inicial</li>
+                <li><span>✓</span> Suporte via WhatsApp</li>
+                <li><span>✓</span> Reavaliação mensal</li>
+              </ul>
+              
+              <div class="plano-cta">
+                <a href="https://web.whatsapp.com/send?phone=/5548996718419&text=Olá%20Gabriel%2C%20quero%20o%20plano%20Individual%20Mensal!" 
+                   target="_blank" 
+                   class="btn-plano">
+                  QUERO ESSE PLANO
+                </a>
+              </div>
+            </div>
+            
+            <!-- Dupla Mensal -->
+            <div class="plano-card destaque">
+              <div class="plano-header">
+                <h3>Em Dupla</h3>
+                <div class="plano-preco">R$ 330,00</div>
+                <span>no pix ou R$349,00 no crédito em até 2x</span>
+                <p class="economia">(R$ 165 por pessoa)</p>
+              </div>
+              
+              <ul class="plano-beneficios">
+                <li><span>✓</span> Todos os benefícios do Individual</li>
+                <li><span>✓</span> Para você e mais uma pessoa</li>
+                <li><span>✓</span> Economia de 15% por pessoa</li>
+                <li><span>✓</span> Treinos sincronizados</li>
+                <li><span>✓</span> Motivação em dobro</li>
+              </ul>
+              
+              <div class="plano-cta">
+                <a href="https://web.whatsapp.com/send?phone=/5548996718419&text=Olá%20Gabriel%2C%20quero%20o%20plano%20Dupla%20Mensal!" 
+                   target="_blank" 
+                   class="btn-plano">
+                  QUERO ESSE PLANO
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
         
-        <ul class="plano-beneficios">
-          <li><span>✓</span> Todos os benefícios do Individual</li>
-          <li><span>✓</span> Para você e mais uma pessoa</li>
-          <li><span>✓</span> Economia de 15% por pessoa</li>
-          <li><span>✓</span> Treinos sincronizados</li>
-          <li><span>✓</span> Motivação em dobro</li>
-        </ul>
-        
-        <div class="destaque-beneficio">
-          <P><strong> trimestral:</strong> R$ 930 (com coqueteleira)</P> 
-          <P><strong> semestral:</strong> R$ 1740 (com camiseta e coqueteleira)</P> 
-          <P><strong> anual:</strong> R$ 3240 (com camiseta e coqueteleira)</P>
+        <!-- Plano Trimestral -->
+        <div class="tab-pane" id="trimestral">
+          <div class="planos-grid">
+            <!-- Individual Trimestral -->
+            <div class="plano-card">
+              <div class="plano-header">
+                <h3>Individual</h3>
+                <div class="plano-preco">R$480,00<span>/3 meses</span></div>
+                <span> no pix ou R$510,00 no crédito em até 3x</span>
+                <p class="economia">(Economia de 11%)</p>
+              </div>
+              
+              <ul class="plano-beneficios">
+                <li><span>✓</span> Todos os benefícios do mensal</li>
+                <li><span>✓</span> Coqueteleira de brinde</li>
+                <li><span>✓</span> Pagamento único</li>
+                <li><span>✓</span> R$ 160/mês</li>
+              </ul>
+              
+              <div class="plano-cta">
+                <a href="https://web.whatsapp.com/send?phone=/5548996718419&text=Olá%20Gabriel%2C%20quero%20o%20plano%20Individual%20Trimestral!" 
+                   target="_blank" 
+                   class="btn-plano">
+                  QUERO ESSE PLANO
+                </a>
+              </div>
+            </div>
+            
+            <!-- Dupla Trimestral -->
+            <div class="plano-card destaque">
+              <div class="plano-header">
+                <h3>Em Dupla</h3>
+                <div class="plano-preco">R$930,00 </div>
+                <span>no pix ou R$995,00 no crédito em até 3x</span>
+                <p class="economia">(R$ 155 por pessoa/mês)</p>
+              </div>
+              
+              <ul class="plano-beneficios">
+                <li><span>✓</span> Todos os benefícios do Individual</li>
+                <li><span>✓</span> Coqueteleira para cada</li>
+                <li><span>✓</span> Economia de 17% por pessoa</li>
+                <li><span>✓</span> Treinos complementares</li>
+              </ul>
+              
+              <div class="plano-cta">
+                <a href="https://web.whatsapp.com/send?phone=/5548996718419&text=Olá%20Gabriel%2C%20quero%20o%20plano%20Dupla%20Trimestral!" 
+                   target="_blank" 
+                   class="btn-plano">
+                  QUERO ESSE PLANO
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
         
-        <div class="plano-cta">
-          <a href="https://web.whatsapp.com/send?phone=/5548996718419&text=Olá%20Gabriel%2C%20quero%20o%20plano%20Em%20Dupla!" 
-             target="_blank" 
-             class="btn-plano">
-            QUERO ESSE PLANO
-          </a>
+        <!-- Plano Semestral -->
+        <div class="tab-pane" id="semestral">
+          <div class="planos-grid">
+            <!-- Individual Semestral -->
+            <div class="plano-card">
+              <div class="plano-header">
+                <h3>Individual</h3>
+                <div class="plano-preco">R$900,00<span>/6 meses</span></div>
+                <span> no pix ou R$986,00 no crédito em até 6x</span>
+                <p class="economia">(Economia de 17%)</p>
+              </div>
+              
+              <ul class="plano-beneficios">
+                <li><span>✓</span> Todos os benefícios do trimestral</li>
+                <li><span>✓</span>  Coqueteleira</li>
+                <li><span>✓</span> R$ 150/mês</li>
+                <li><span>✓</span> Acompanhamento prioritário</li>
+              </ul>
+              
+              <div class="plano-cta">
+                <a href="https://web.whatsapp.com/send?phone=/5548996718419&text=Olá%20Gabriel%2C%20quero%20o%20plano%20Individual%20Semestral!" 
+                   target="_blank" 
+                   class="btn-plano">
+                  QUERO ESSE PLANO
+                </a>
+              </div>
+            </div>
+            
+            <!-- Dupla Semestral -->
+            <div class="plano-card destaque">
+              <div class="plano-header">
+                <h3>Em Dupla</h3>
+                <div class="plano-preco">R$ 1.740,00</div>
+                <span>no pix ou R$1.907,00 no crédito em até 6x</span>
+                <p class="economia">(R$ 145,00 por pessoa/mês)</p>
+              </div>
+              
+              <ul class="plano-beneficios">
+                <li><span>✓</span> Todos os benefícios do Individual</li>
+                <li><span>✓</span>  Coqueteleira para cada</li>
+                <li><span>✓</span> Economia de 22% por pessoa</li>
+                <li><span>✓</span> Desafios exclusivos</li>
+              </ul>
+              
+              <div class="plano-cta">
+                <a href="https://web.whatsapp.com/send?phone=/5548996718419&text=Olá%20Gabriel%2C%20quero%20o%20plano%20Dupla%20Semestral!" 
+                   target="_blank" 
+                   class="btn-plano">
+                  QUERO ESSE PLANO
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Plano Anual -->
+        <div class="tab-pane active" id="anual">
+          <div class="planos-grid">
+            <!-- Individual Anual -->
+            <div class="plano-card">
+              <div class="plano-header">
+                <h3>Individual</h3>
+                <div class="plano-preco">R$ 1.200,00<span>/12 meses</span> </div>
+                <span>no pix ou R$1.390,00 no crédito em até 12x.</span>
+                <p class="economia">(Economia de 22%)</p>
+              </div>
+              
+              <ul class="plano-beneficios">
+                <li><span>✓</span> Todos os benefícios do semestral</li>
+                <li><span>✓</span> Brindes premium (camiseta + coqueteleira)</li>
+                <li><span>✓</span> R$ 100/mês</li>
+                <li><span>✓</span> Melhor custo-benefício</li>
+              </ul>
+              
+              <div class="plano-cta">
+                <a href="https://web.whatsapp.com/send?phone=/5548996718419&text=Olá%20Gabriel%2C%20quero%20o%20plano%20Individual%20Anual!" 
+                   target="_blank" 
+                   class="btn-plano">
+                  QUERO ESSE PLANO
+                </a>
+              </div>
+            </div>
+            
+            <!-- Dupla Anual -->
+            <div class="plano-card destaque">
+              <div class="plano-header">
+                <h3>Em Dupla</h3>
+                <div class="plano-preco">R$ 2.160,00</div>
+                <span> no pix ou R$2.500,00 no crédito em até 12x.</span>
+                <p class="economia">(R$ 90,00 por pessoa/mês)</p>
+              </div>
+              
+              <ul class="plano-beneficios">
+                <li><span>✓</span> Todos os benefícios do Individual</li>
+                <li><span>✓</span> Brindes premium para cada (camiseta + coqueteleira)</li>
+                <li><span>✓</span> Economia de 27% por pessoa</li>
+                <li><span>✓</span> Programa de metas exclusivo</li>
+              </ul>
+              
+              <div class="plano-cta">
+                <a href="https://web.whatsapp.com/send?phone=/5548996718419&text=Olá%20Gabriel%2C%20quero%20o%20plano%20Dupla%20Anual!" 
+                   target="_blank" 
+                   class="btn-plano">
+                  QUERO ESSE PLANO
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
+    
+    <p class="pagamento-info"><strong>Formas de pagamento:</strong>  Pix, boleto, transferência ou cartão (até 12x)</p>
   
-  <p class="pagamento-info"><strong>Formas de pagamento:</strong> Pix (5% off), boleto, transferência ou cartão (parcelado em até 12x).</p>
-
-  <div class="cta-duvidas">
-    <a href="https://web.whatsapp.com/send?phone=/5548996718419&text=Olá%20Gabriel%2C%20quero%20mais%20informa%C3%A7%C3%B5es%20sobre%20os%20planos!" 
-       target="_blank" 
-       class="btn-duvidas">
-      TENHO DÚVIDAS, FALE COMIGO
-    </a>
+    <div class="cta-duvidas">
+      <a href="https://web.whatsapp.com/send?phone=/5548996718419&text=Olá%20Gabriel%2C%20quero%20mais%20informa%C3%A7%C3%B5es%20sobre%20os%20planos!" 
+         target="_blank" 
+         class="btn-duvidas">
+        TENHO DÚVIDAS, FALE COMIGO
+      </a>
+    </div>
   </div>
-</div>
 </section>
   <footer>
     <div class="container">
@@ -1699,7 +2007,6 @@ html {
       <p class="copyright">&copy; 2025 Gabriel Ruchert Personal. Todos os direitos reservados.</p>
     </div>
   </footer>
-
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       const carousel = document.getElementById('results-carousel');
@@ -1710,72 +2017,71 @@ html {
       
       let currentIndex = 0;
       const cardCount = cards.length;
+      let touchStartX = 0;
+      let touchEndX = 0;
       
-      // Criar dots de navegação
+      // Criar dots
       cards.forEach((_, index) => {
-        const dot = document.createElement('div');
+        const dot = document.createElement('span');
         dot.classList.add('dot');
-        if (index === 0) dot.classList.add('active');
+        if(index === 0) dot.classList.add('active');
         dot.addEventListener('click', () => goToSlide(index));
         dotsContainer.appendChild(dot);
       });
       
-      // Atualizar carrossel
+      const dots = document.querySelectorAll('.dot');
+      
       function updateCarousel() {
         carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
         
-        // Atualizar dots ativos
-        document.querySelectorAll('.dot').forEach((dot, index) => {
+        dots.forEach((dot, index) => {
           dot.classList.toggle('active', index === currentIndex);
         });
       }
       
-      // Ir para slide específico
       function goToSlide(index) {
         currentIndex = index;
         updateCarousel();
       }
       
-      // Slide anterior
-      prevBtn.addEventListener('click', () => {
-        currentIndex = (currentIndex > 0) ? currentIndex - 1 : cardCount - 1;
+      function nextSlide() {
+        currentIndex = (currentIndex + 1) % cardCount;
         updateCarousel();
-      });
+      }
       
-      // Próximo slide
-      nextBtn.addEventListener('click', () => {
-        currentIndex = (currentIndex < cardCount - 1) ? currentIndex + 1 : 0;
+      function prevSlide() {
+        currentIndex = (currentIndex - 1 + cardCount) % cardCount;
         updateCarousel();
-      });
+      }
       
-      // Navegação por teclado
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'ArrowLeft') {
-          prevBtn.click();
-        } else if (e.key === 'ArrowRight') {
-          nextBtn.click();
-        }
-      });
+      // Event listeners
+      nextBtn.addEventListener('click', nextSlide);
+      prevBtn.addEventListener('click', prevSlide);
       
-      // Auto-play (opcional)
-      let autoPlay = setInterval(() => {
-        nextBtn.click();
-      }, 5000);
+      // Touch events para mobile
+      carousel.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+      }, {passive: true});
       
-      // Pausar auto-play quando o mouse estiver sobre o carrossel
-      const carouselContainer = document.querySelector('.results-carousel');
-      carouselContainer.addEventListener('mouseenter', () => {
-        clearInterval(autoPlay);
-      });
+      carousel.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+      }, {passive: true});
       
-      carouselContainer.addEventListener('mouseleave', () => {
-        autoPlay = setInterval(() => {
-          nextBtn.click();
-        }, 5000);
-      });
+      function handleSwipe() {
+        const diff = touchStartX - touchEndX;
+        if (diff > 50) nextSlide(); // Swipe para esquerda
+        if (diff < -50) prevSlide(); // Swipe para direita
+      }
+      
+      // Opcional: Auto-play (removido para mobile por padrão)
+      if (window.innerWidth > 768) {
+        let interval = setInterval(nextSlide, 5000);
+        carousel.addEventListener('mouseenter', () => clearInterval(interval));
+        carousel.addEventListener('mouseleave', () => interval = setInterval(nextSlide, 5000));
+      }
     });
-    
-  </script>
+    </script>
 <script>
   document.addEventListener('DOMContentLoaded', function() {
     // Configuração do carrossel de depoimentos
@@ -1900,6 +2206,42 @@ html {
       });
     });
   </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const tabBtns = document.querySelectorAll('.tab-btn');
+      
+      tabBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+          // Remove classe active de todos os botões
+          tabBtns.forEach(b => b.classList.remove('active'));
+          
+          // Adiciona classe active apenas no botão clicado
+          this.classList.add('active');
+          
+          // Esconde todos os painéis
+          document.querySelectorAll('.tab-pane').forEach(pane => {
+            pane.classList.remove('active');
+          });
+          
+          // Mostra apenas o painel correspondente
+          const tabId = this.getAttribute('data-tab');
+          document.getElementById(tabId).classList.add('active');
+        });
+      });
+    });
+    </script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        // Remove a classe 'active' de todas as abas e painéis
+        document.querySelectorAll('.tab-btn, .tab-pane').forEach(function(element) {
+          element.classList.remove('active');
+        });
+        
+        // Adiciona a classe 'active' apenas para a aba Anual
+        document.querySelector('.tab-btn[data-tab="anual"]').classList.add('active');
+        document.querySelector('#anual').classList.add('active');
+      });
+      </script>
 </body>
 </html>
 </body>
