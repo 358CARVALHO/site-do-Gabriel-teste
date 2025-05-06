@@ -983,52 +983,40 @@ html {
 }
 
   /* ============ SEÇÃO FEEDBACKS DOS ALUNOS ============ */
-  .depoimentos-section {
-    margin: 60px auto;
-    background: var(--white);
-    border-radius: 15px;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
-    max-width: 1200px;
-  }
 
-  .depoimentos-container {
-    padding: 60px;
-    position: relative;
-    max-width: 1000px;
+  /* Estilos gerais */
+  .depoimento-img {
+    width: 100%; /* Ocupa toda a largura no mobile */
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    display: block;
     margin: 0 auto;
+    max-width: 100%; /* Garante que não ultrapasse o container */
+    max-height: 80vh; /* Limita a altura para não ficar excessivamente grande */
   }
 
-  .depoimentos-title {
-    text-align: center;
-    margin-bottom: 40px;
+  /* Ajustes para desktop */
+  @media (min-width: 768px) {
+    .depoimento-img {
+      width: 80%; /* Reduzido para 80% no desktop */
+      max-width: 500px; /* Largura máxima menor no desktop */
+      max-height: none; /* Remove a limitação de altura no desktop */
+    }
   }
 
-  .depoimentos-title h2 {
-    text-align: center;
-    margin-bottom: 15px;
-    position: relative;
+  /* Ajustes adicionais para mobile */
+  @media (max-width: 767px) {
+    .depoimento-card {
+      padding: 0 5px; /* Reduz o padding lateral para ganhar mais espaço */
+    }
+    
+    .carrossel-container {
+      margin: 20px 0; /* Reduz a margem vertical para ganhar espaço */
+    }
   }
 
-  .depoimentos-title h2:after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80px;
-    height: 3px;
-    background: var(--primary-color);
-  }
-
-  .depoimentos-title p {
-    font-size: 1.1rem;
-    color: #666;
-    max-width: 700px;
-    margin: 0 auto; 
-    text-align: center; 
-  }
-
-  /* Estilos do Carrossel */
+  /* Mantém os outros estilos do carrossel */
   .carrossel-container {
     position: relative;
     overflow: hidden;
@@ -1047,8 +1035,11 @@ html {
     box-sizing: border-box;
   }
 
+  /* ... (mantenha os outros estilos do carrossel) ... */
+
+
   .depoimento-img {
-    width: 90%; /* Reduzido para 90% no desktop */
+    width: 95%; /* Reduzido para 90% no desktop */
     max-width: 600px; /* Largura máxima reduzida */
     height: auto;
     margin: 0 auto; /* Centraliza a imagem */
@@ -1133,8 +1124,8 @@ html {
     
     /* No mobile, a imagem ocupa 100% da largura */
     .depoimento-img {
-      width: 100%;
-      max-width: 100%;
+      width: 200%;
+      max-width: 200%;
     }
   }
 
