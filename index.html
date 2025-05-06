@@ -139,8 +139,8 @@
       left: 0;
       font-size: 1.3rem;
     }
-    /* Estilos para a seção Nossos Números */
-    .numeros-section {
+/* ============ SEÇÃO NOSSOS NÚMEROS ============ */
+.numeros-section {
   background: linear-gradient(135deg, #000000, #ff6600);
   color: white;
   border-radius: 15px;
@@ -148,15 +148,7 @@
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
   padding: 60px 20px;
 }
-.highlight-scroll {
-      animation: highlight 1s ease;
-    }
-    @keyframes highlight {
-      0% { box-shadow: 0 0 0 0 rgba(255,102,0,0.7); }
-      50% { box-shadow: 0 0 0 10px rgba(255,102,0,0); }
-      100% { box-shadow: 0 0 0 0 rgba(255,102,0,0); }
-    }
-/* Novo: container flex para imagem + grid */
+
 .numeros-content {
   display: flex;
   flex-wrap: wrap;
@@ -165,7 +157,6 @@
   justify-content: center;
 }
 
-/* imagem do lado esquerdo */
 .numeros-img {
   flex: 1 1 300px;
   max-width: 500px;
@@ -177,7 +168,6 @@
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
-/* grid dos números ao lado direito */
 .numeros-grid {
   flex: 2 1 400px;
   display: grid;
@@ -257,7 +247,17 @@
   margin-top: 50px;
 }
 
-/* Responsivo */
+.highlight-scroll {
+  animation: highlight 1s ease;
+}
+
+@keyframes highlight {
+  0% { box-shadow: 0 0 0 0 rgba(255,102,0,0.7); }
+  50% { box-shadow: 0 0 0 10px rgba(255,102,0,0); }
+  100% { box-shadow: 0 0 0 0 rgba(255,102,0,0); }
+}
+
+/* ============ RESPONSIVIDADE ============ */
 @media (max-width: 768px) {
   .numeros-content {
     flex-direction: column;
@@ -276,8 +276,7 @@
     font-size: 2.8rem;
   }
 }
-/* NOVOS ESTILOS PARA A SEÇÃO DE PLANOS */
-/* Estilos para o sistema de abas */
+/* ============ SEÇÃO DE PLANOS ============ */
 .planos-tabs {
   margin-top: 30px;
 }
@@ -287,11 +286,11 @@
   justify-content: center;
   margin-bottom: 30px;
   flex-wrap: wrap;
+  gap: 10px;
 }
 
 .tab-btn {
   padding: 12px 25px;
-  margin: 0 5px 10px;
   background: #f5f5f5;
   border: none;
   border-radius: 50px;
@@ -331,13 +330,6 @@
   font-weight: 600;
 }
 
-@media (max-width: 768px) {
-  .tab-btn {
-    padding: 10px 15px;
-    font-size: 0.9rem;
-    margin: 0 3px 5px;
-  }
-}
 .planos-container {
   display: flex;
   justify-content: center;
@@ -382,1064 +374,250 @@
   font-weight: bold;
 }
 
-/* RESPONSIVO */
-@media (max-width: 768px) {
+.plano-header {
+  text-align: center;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.plano-header h3 {
+  font-size: 1.8rem;
+  color: #000;
+  margin-bottom: 15px;
+}
+
+.plano-preco {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #ff6600;
+  margin: 10px 0;
+}
+
+.plano-preco span {
+  font-size: 1rem;
+  color: #666;
+  font-weight: normal;
+}
+
+.plano-beneficios {
+  margin: 25px 0;
+  list-style: none;
+}
+
+.plano-beneficios li {
+  padding: 12px 0;
+  position: relative;
+  padding-left: 30px;
+  font-size: 1.05rem;
+}
+
+.plano-beneficios li span {
+  color: #ff6600;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
+
+.destaque-beneficio {
+  background: #f9f9f9;
+  padding: 15px;
+  border-radius: 8px;
+  margin: 20px 0;
+  text-align: center;
+  font-size: 0.95rem;
+  color: #666;
+}
+
+.btn-plano {
+  display: block;
+  background: #ff6600;
+  color: white;
+  padding: 15px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.btn-plano:hover {
+  background: #000;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.pagamento-info {
+  text-align: center;
+  margin: 40px 0 20px;
+  font-size: 1.1rem;
+  color: #666;
+}
+
+.cta-duvidas {
+  text-align: center;
+  margin: 30px 0;
+}
+
+.btn-duvidas {
+  display: inline-block;
+  background: #000;
+  color: white;
+  padding: 15px 30px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: 2px solid #000;
+}
+
+.btn-duvidas:hover {
+  background: transparent;
+  color: #000;
+}
+
+/* ============ RESPONSIVIDADE ============ */
+@media (max-width: 992px) {
   .planos-grid {
-    grid-template-columns: 1fr;
-    max-width: 400px;
+    grid-template-columns: 1fr 1fr;
   }
   
   .plano-card.destaque {
     transform: none;
   }
 }
- 
-  .plano-header {
-    text-align: center;
-    padding-bottom: 20px;
-    margin-bottom: 20px;
-    border-bottom: 1px solid #eee;
+
+@media (max-width: 768px) {
+  .planos-grid {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+  }
+  
+  .plano-card {
+    padding: 25px;
   }
   
   .plano-header h3 {
-    font-size: 1.8rem;
-    color: #000;
-    margin-bottom: 15px;
+    font-size: 1.6rem;
   }
   
   .plano-preco {
-    font-size: 2.5rem;
-    font-weight: bold;
-    color: #ff6600;
-    margin: 10px 0;
+    font-size: 2.2rem;
   }
   
-  .plano-preco span {
-    font-size: 1rem;
-    color: #666;
-    font-weight: normal;
-  }
-  
-  .plano-beneficios {
-    margin: 25px 0;
-    list-style: none;
-  }
-  
-  .plano-beneficios li {
-    padding: 12px 0;
-    position: relative;
-    padding-left: 30px;
-    font-size: 1.05rem;
-  }
-  
-  .plano-beneficios li span {
-    color: #ff6600;
-    font-weight: bold;
-    position: absolute;
-    left: 0;
-  }
-  
-  .destaque-beneficio {
-    background: #f9f9f9;
-    padding: 15px;
-    border-radius: 8px;
-    margin: 20px 0;
-    text-align: center;
-    font-size: 0.95rem;
-    color: #666;
-  }
-  
-  .btn-plano {
-    display: block;
-    background: #ff6600;
-    color: white;
-    padding: 15px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: 600;
-    text-align: center;
-    transition: all 0.3s ease;
-  }
-  
-  .btn-plano:hover {
-    background: #000;
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-  }
-  
-  .pagamento-info {
-    text-align: center;
-    margin: 40px 0 20px;
-    font-size: 1.1rem;
-    color: #666;
-  }
-  
-  .cta-duvidas {
-    text-align: center;
-    margin: 30px 0;
-  }
-  
-  .btn-duvidas {
-    display: inline-block;
-    background: #000;
-    color: white;
-    padding: 15px 30px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    border: 2px solid #000;
-  }
-  
-  .btn-duvidas:hover {
-    background: transparent;
-    color: #000;
-  }
-  
-  /* RESPONSIVO */
-  @media (max-width: 992px) {
-    .planos-grid {
-      grid-template-columns: 1fr 1fr;
-    }
-    
-    .plano-card.destaque {
-      transform: none;
-    }
-  }
-  
-  @media (max-width: 768px) {
-    .planos-grid {
-      grid-template-columns: 1fr;
-      max-width: 500px;
-    }
-    
-    .plano-card {
-      padding: 25px;
-    }
-    
-    .plano-header h3 {
-      font-size: 1.6rem;
-    }
-    
-    .plano-preco {
-      font-size: 2.2rem;
-    }
-  }
-      /* Seção de Benefícios */
-      .benefits-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
-      margin: 40px 0;
-    }
-    
-    .benefit-card {
-      background: var(--white);
-      padding: 25px;
-      border-radius: 10px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-      text-align: center;
-      transition: all 0.3s ease;
-    }
-    
-    .benefit-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-    }
-    
-    .benefit-icon {
-      font-size: 2.5rem;
-      margin-bottom: 15px;
-      color: var(--primary);
-    }
-    
-    .benefit-card h3 {
-      color: var(--secondary);
-      margin-bottom: 10px;
-    }
-    /* ESTILOS PARA CARROSSEL DE RESULTADOS */
-    .before-after {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem;
-    text-align: center;
-  }
-  
-  .before-after h2 {
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
-    color: #333;
-  }
-  
-  .results-carousel {
-    position: relative;
-    overflow: hidden;
-    margin: 0 auto;
-  }
-  
-  .results-container {
-    display: flex;
-    transition: transform 0.5s ease;
-  }
-  
-  .result-card {
-    min-width: 100%;
-    box-sizing: border-box;
-    padding: 0 10px;
-  }
-  
-  .result-images img {
-    width: 100%;
-    max-width: 800px;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    margin: 0 auto;
-    display: block;
-  }
-  
-  .carousel-nav {
-    position: absolute;
-    top: 50%;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    transform: translateY(-50%);
-  }
-  
-  .carousel-btn {
-    background: rgba(255,255,255,0.7);
-    border: none;
-    font-size: 2rem;
-    cursor: pointer;
+  .tab-btn {
     padding: 10px 15px;
-    border-radius: 50%;
-    margin: 0 20px;
-    z-index: 10;
-    transition: all 0.3s ease;
+    font-size: 0.9rem;
+    margin: 0 3px 5px;
   }
-  
-  .carousel-btn:hover {
-    background: rgba(0,0,0,0.7);
-    color: white;
-  }
-  
-  .carousel-dots {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-  }
-  
-  .dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: #ccc;
-    margin: 0 5px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-  }
-  
-  .dot.active {
-    background: #333;
-  }
-  @media (max-width: 768px) {
-    .before-after {
-      padding: 0.5rem;
-    }
-    
-    .result-images img {
-      max-height: 70vh;
-      border-radius: 6px;
-    }
-    
-    .carousel-btn {
-      padding: 6px 10px;
-      margin: 0 2px;
-    }
-    
-    .carousel-dots {
-      margin-top: 10px;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .results-carousel {
-      width: 100%;
-    }
-    
-    .result-card {
-      padding: 0;
-    }
-    
-    .result-images img {
-      max-height: 60vh;
-      border-radius: 4px;
-    }
-    
-    .carousel-btn {
-      font-size: 1.5rem;
-      padding: 5px 8px;
-    }
-  }
-    /* DESTAQUE */
-    .destaque {
-      background: linear-gradient(135deg, #000000, #ff6600);
-      color: var(--white);
-      padding: 80px 20px;
-      text-align: center;
-      margin: 60px 0;
-      border-radius: 15px;
-    }
-    
-    .destaque h2 {
-      color: var(--white);
-      margin-bottom: 25px;
-      font-size: 2.2rem;
-    }
-    
-    .destaque h2:after {
-      background: var(--white);
-      left: 50%;
-      transform: translateX(-50%);
-    }
-    
-    .destaque p {
-      max-width: 800px;
-      margin: 0 auto 40px;
-      font-size: 1.2rem;
-      line-height: 1.8;
-    }
-    
-    /* CTA */
-    .cta {
-      text-align: center;
-      margin: 60px 0 40px;
-    }
-    
-    .cta a {
-      background: #000000;
-      color: var(--white);
-      padding: 20px 50px;
-      font-size: 1.3rem;
-      border-radius: 50px;
-      text-decoration: none;
-      transition: all 0.3s ease;
-      display: inline-block;
-      font-weight: 600;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-    }
-    
-    .cta a:hover {
-      background: #ff6600;
-      transform: translateY(-5px) scale(1.05);
-      box-shadow: 0 15px 40px rgba(0,0,0,0.3);
-    }
-    
-    /* FOOTER */
-    footer {
-      background: var(--secondary);
-      color: var(--dark-gray);
-      text-align: center;
-      padding: 50px 20px;
-      margin-top: 80px;
-    }
-    
-    footer img {
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin: 0 auto 20px;
-      display: block;
-      border: 4px solid #ff6600;
-    }
-    
-    footer h3 {
-      color: var(--white);
-      margin-bottom: 10px;
-      font-size: 1.8rem;
-    }
-    
-    footer p {
-      margin-bottom: 25px;
-      font-size: 1.1rem;
-    }
-    
-    .social-links {
-      margin: 30px 0;
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-    }
-    
-    .social-links a {
-      color: var(--white);
-      font-size: 1.8rem;
-      transition: all 0.3s ease;
-      display: inline-flex;
-      width: 60px;
-      height: 60px;
-      background: rgba(17, 17, 17, 0.1);
-      border-radius: 50%;
-      align-items: center;
-      justify-content: center;
-    }
-    
-    .social-links a:hover {
-      color: var(--white);
-      background: #000000;
-      transform: translateY(-5px);
-    }
-    
-    footer .copyright {
-      font-size: 0.9rem;
-      opacity: 0.8;
-    }
-    
-    /* SEÇÃO "QUEM É GABRIEL" */
-    .about-section {
-      margin: 40px auto;
-      background: var(--white);
-      border-radius: 15px;
-      box-shadow: 0 10px 40px rgba(0,0,0,0.1);
-      overflow: hidden;
-    }
-    
-    .about-content {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-    }
-    
-    .about-text {
-      flex: 1;
-      min-width: 300px;
-      padding: 40px;
-    }
-   
-    .specialty-item {
-       font-size: 20px; /* ou o tamanho que preferir */
-       line-height: 1,8; /* espaçamento entre linhas */
-    }
-
-    .about-image {
-      flex: 1;
-      min-width: 300px;
-      position: relative;
-    }
-    
-    .about-image img {
-      width: 100%;
-      height: 100%;
-      min-height: 400px;
-      object-fit: cover;
-    }
-    /* Botão Comece Agora */
-    .btn-comece-agora {
-    display: inline-block;
-    padding: 18px 40px;
-    background: linear-gradient(45deg, #ff6600, #ff8c00); /* Gradiente laranja */
-    color: white;
-    text-decoration: none;
-    border-radius: 50px;
-    font-weight: 700;
-    margin: 30px auto;
-    transition: all 0.3s ease;
-    text-align: center;
-    font-size: 1.3rem;
-    box-shadow: 0 5px 15px rgba(255, 102, 0, 0.4);
-    border: none;
-    cursor: pointer;
-    width: fit-content;
-    animation: pulse 2s infinite; /* Efeito de pulsar */
+}
+/* ============ SEÇÃO DE BENEFÍCIOS ============ */
+.beneficios-section {
+  padding: 60px 20px;
+  text-align: center;
 }
 
-.btn-comece-agora:hover {
-    transform: translateY(-3px) scale(1.05); /* Aumenta levemente no hover */
-    box-shadow: 0 10px 25px rgba(255, 102, 0, 0.5);
+.beneficios-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+  color: #000;
+  position: relative;
 }
 
-@keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-    100% { transform: scale(1); }
-}
-
-html {
-    scroll-behavior: smooth;
-}
-.depoimentos-section {
-      margin: 60px auto;
-      background: var(--white);
-      border-radius: 15px;
-      box-shadow: 0 10px 40px rgba(0,0,0,0.1);
-    }
-
-    .depoimentos-container {
-      padding: 60px;
-      position: relative;
-    }
-
-    .depoimentos-title {
-      text-align: center;
-      margin-bottom: 40px;
-    }
-
-    .depoimentos-title h2 {
-      text-align: center;
-      margin-bottom: 15px;
-    }
-
-    .depoimentos-title h2:after {
-      left: 50%;
-      transform: translateX(-50%);
-    }
-
-    .depoimentos-title p {
-      font-size: 1.1rem;
-      color: #666;
-      max-width: 700px;
-      margin: 0 auto;
-    }
-
-    .depoimentos-carrossel {
-      position: relative;
-      width: 100%;
-      overflow: hidden;
-      padding: 20px 0;
-    }
-
-    .depoimentos-track {
-      display: flex;
-      gap: 20px;
-      transition: transform 0.5s ease;
-    }
-
-    .depoimento-card {
-      min-width: 300px;
-      flex: 0 0 300px;
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-      transition: all 0.3s ease;
-    }
-
-    .depoimento-card {
-  min-width: 300px;
-  flex: 0 0 300px;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
-  display: flex;
-  justify-content: center; /* Garante que o conteúdo do card (imagem) fique centralizado */
-  align-items: center; /* Centraliza a imagem verticalmente, se necessário */
-}
-
-.depoimento-img {
-  max-width: 100%; /* Garante que a imagem ocupe 100% da largura do card */
-  height: auto; /* Mantém a proporção da imagem */
+.beneficios-section h2:after {
+  content: '';
   display: block;
-  margin: 0 auto; /* Centraliza horizontalmente */
+  width: 80px;
+  height: 4px;
+  background: #ff6600;
+  margin: 15px auto 0;
 }
 
-    .carrossel-nav {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      padding: 0 10px;
-      z-index: 10;
-    }
-
-    .carrossel-btn {
-      background: rgba(0,0,0,0.7);
-      color: white;
-      border: none;
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      font-size: 1.2rem;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: all 0.3s ease;
-    }
-
-    .carrossel-btn:hover {
-      background: #ff6600;
-      transform: scale(1.1);
-    }
-
-    .carrossel-dots {
-      display: flex;
-      justify-content: center;
-      margin-top: 30px;
-      gap: 10px;
-    }
-
-    .carrossel-dot {
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-      background: #ddd;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-
-    .carrossel-dot.active {
-      background: #ff6600;
-      transform: scale(1.2);
-    }
-
-    @media (max-width: 768px) {
-      .depoimentos-container {
-        padding: 40px 20px;
-      }
-      
-      .depoimento-card {
-        min-width: 280px;
-        flex: 0 0 280px;
-      }
-      
-      .carrossel-btn {
-        width: 35px;
-        height: 35px;
-      }
-    }
-
-    @media (max-width: 576px) {
-      .depoimentos-title h2 {
-        font-size: 1.8rem;
-      }
-      
-      .depoimento-card {
-        min-width: 260px;
-        flex: 0 0 260px;
-      }
-    }
-    /* RESPONSIVO */
-    @media (max-width: 1200px) {
-      .result-images img {
-        height: 300px;
-      }
-    }
-    
-    @media (max-width: 992px) {
-      .section-content {
-        padding: 50px 40px;
-      }
-      
-      .plano-card {
-        min-width: 280px;
-      }
-      
-      .result-images img {
-        height: 280px;
-      }
-    }
-    
-    @media (max-width: 768px) {
-      header {
-        padding: 80px 20px 60px;
-      }
-      
-      header h1 {
-        font-size: 2.2rem;
-      }
-      
-      header p {
-        font-size: 1.1rem;
-      }
-      
-      .personal-photo {
-        width: 150px;
-        height: 150px;
-      }
-      
-      .section-content {
-        padding: 40px 30px;
-      }
-      
-      h2 {
-        font-size: 1.8rem;
-      }
-      
-      .result-images img {
-        height: 250px;
-      }
-      
-      .plano-card {
-        min-width: 100%;
-        max-width: 100%;
-      }
-      
-      .cta a {
-        font-size: 1.1rem;
-        padding: 18px 40px;
-      }
-      
-      .carousel-btn {
-        width: 40px;
-        height: 40px;
-        font-size: 1.2rem;
-      }
-      
-      .about-text, .about-image {
-        min-width: 100%;
-      }
-      
-      .about-image img {
-        min-height: 300px;
-      }
-    }
-    
-    @media (max-width: 576px) {
-      header {
-        padding: 60px 20px 40px;
-      }
-      
-      header h1 {
-        font-size: 1.8rem;
-      }
-      
-      .personal-photo {
-        width: 120px;
-        height: 120px;
-      }
-      
-      .section-content {
-        padding: 30px 20px;
-      }
-      
-      h2 {
-        font-size: 1.6rem;
-        margin-bottom: 20px;
-      }
-      
-      ul li {
-        font-size: 1rem;
-        padding-left: 30px;
-      }
-      
-      .destaque {
-        padding: 50px 20px;
-      }
-      
-      .destaque h2 {
-        font-size: 1.8rem;
-      }
-      
-      .destaque p {
-        font-size: 1rem;
-      }
-      
-      footer {
-        padding: 40px 20px;
-      }
-      
-      footer img {
-        width: 80px;
-        height: 80px;
-      }
-      
-      .social-links a {
-        width: 50px;
-        height: 50px;
-        font-size: 1.5rem;
-      }
-      
-      .result-images img {
-        height: 220px;
-      }
-      
-      .carousel-btn {
-        width: 35px;
-        height: 35px;
-        font-size: 1rem;
-        padding: 0;
-      }
-      
-      .about-text {
-        padding: 30px 20px;
-      }
-    }
-   /* CTA - Ajustes para iOS */
-.cta {
-    text-align: center;
-    margin: 30px 0; /* Reduzi a margem para mobile */
-    animation: pulse 2s infinite;
-    padding: 0 15px; /* Adiciona padding lateral para evitar tocar nas bordas */
+/* Grid de benefícios - versão 1 */
+.beneficios-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.cta-button {
-    background: var(--primary);
-    color: var(--white);
-    padding: 16px 30px; /* Reduzi o padding para mobile */
-    font-size: 1rem; /* Tamanho de fonte menor para mobile */
-    border-radius: 50px;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    display: inline-block;
-    font-weight: 600;
-    box-shadow: 0 5px 15px rgba(255,94,0,0.3);
-    border: none;
-    cursor: pointer;
-    animation: pulse 2s infinite;
-    -webkit-tap-highlight-color: transparent; /* Remove o highlight ao tocar no iOS */
-    min-width: 200px; /* Largura mínima para evitar quebras */
+.beneficio-card {
+  background: #fff;
+  border-radius: 15px;
+  padding: 40px 25px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  border-top: 4px solid #ff6600;
 }
 
-/* Media Queries para ajustes específicos */
-@media (max-width: 480px) {
-    .cta-button {
-        padding: 14px 25px;
-        font-size: 0.9rem;
-        width: 90%; /* Ocupa quase toda a largura */
-        max-width: 280px; /* Limita a largura máxima */
-    }
-    
-    .cta {
-        margin: 20px 0;
-    }
+.beneficio-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
 }
 
-/* Ajustes para hover que também funcionam como active no mobile */
-.cta-button:hover, .cta-button:active {
-    background: var(--primary-dark);
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(255,94,0,0.4);
+.beneficio-icon {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  color: #ff6600;
 }
 
-@keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-    100% { transform: scale(1); }
+.beneficio-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #000;
 }
-      /* ESTILOS PARA OS BENEFÍCIOS (adicione ao seu CSS) */
-  .beneficios-section {
-    padding: 60px 20px;
-    text-align: center;
-  }
-  
-  .beneficios-section h2 {
-    font-size: 2.5rem;
-    margin-bottom: 50px;
-    color: #000;
-    position: relative;
-  }
-  
-  .beneficios-section h2:after {
-    content: '';
-    display: block;
-    width: 80px;
-    height: 4px;
-    background: #ff6600;
-    margin: 15px auto 0;
-  }
-  
-  .beneficios-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  
-  .beneficio-card {
-    background: #fff;
-    border-radius: 15px;
-    padding: 40px 25px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    transition: all 0.3s ease;
-    border-top: 4px solid #ff6600;
-  }
-  
-  .beneficio-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
-  }
-  
-  .beneficio-icon {
-    font-size: 3rem;
-    margin-bottom: 20px;
-    color: #ff6600;
-  }
-  
-  .beneficio-card h3 {
-    font-size: 1.5rem;
-    margin-bottom: 15px;
-    color: #000;
-  }
-  
-  .beneficio-card p {
-    font-size: 1.1rem;
-    color: #555;
-    line-height: 1.6;
-  }
-  
-  .destaque-cupom {
-    background: #ff6600;
-    color: white;
-    padding: 3px 10px;
-    border-radius: 5px;
-    font-weight: bold;
-    display: inline-block;
-    margin-top: 5px;
-  }
-  
-  @media (max-width: 768px) {
-    .beneficios-grid {
-      grid-template-columns: 1fr;
-    }
-    
-    .beneficio-card {
-      padding: 30px 20px;
-    }
-  }
-   /* ESTILOS PARA ESTA SEÇÃO */
-   .destaque-com-imagem {
-    background: linear-gradient(135deg, #000000, #ff6600);
-    color: white;
-    padding: 60px 20px;
-    margin: 60px 0;
-  }
-  
-  .destaque-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    gap: 50px;
-  }
-  
-  .destaque-texto {
-    flex: 1;
-  }
-  
-  .destaque-texto h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    position: relative;
-    color: white;
-  }
-  
-  .destaque-texto h2:after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 0;
-    width: 80px;
-    height: 3px;
-    background: white;
-  }
-  
-  .destaque-texto p {
-    font-size: 1.2rem;
-    line-height: 1.8;
-    margin-bottom: 25px;
-    opacity: 0.9;
-  }
-  
-  .destaque-lista {
-    list-style: none;
-    margin: 30px 0;
-  }
-  
-  .destaque-lista li {
-    padding: 10px 0;
-    font-size: 1.1rem;
-    position: relative;
-    padding-left: 35px;
-  }
-  
-  .destaque-lista li span {
-    color: #ff6600;
-    font-weight: bold;
-    position: absolute;
-    left: 0;
-    font-size: 1.5rem;
-  }
-  
-  .destaque-imagem {
-    flex: 1;
-    position: relative;
-  }
-  
-  .foto-metodo {
-    width: 100%;
-    border-radius: 15px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-    border: 5px solid white;
-    transform: rotate(-3deg);
-    transition: transform 0.3s ease;
-  }
-  
-  .foto-metodo:hover {
-    transform: rotate(0deg) scale(1.02);
-  }
-  
-  .btn-destaque {
-    display: inline-block;
-    padding: 18px 40px;
-    background: white;
-    color: #ff6600;
-    text-decoration: none;
-    border-radius: 50px;
-    font-weight: 700;
-    font-size: 1.1rem;
-    transition: all 0.3s ease;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-  }
-  
-  .btn-destaque:hover {
-    background: #000;
-    color: white;
-    transform: translateY(-5px);
-    box-shadow: 0 15px 40px rgba(0,0,0,0.3);
-  }
-  
-  /* RESPONSIVO */
-  @media (max-width: 992px) {
-    .destaque-container {
-      flex-direction: column;
-      gap: 30px;
-    }
-    
-    .destaque-texto, .destaque-imagem {
-      width: 100%;
-    }
-    
-    .destaque-texto h2 {
-      font-size: 2rem;
-    }
-    
-    .foto-metodo {
-      max-width: 500px;
-      margin: 0 auto;
-    }
-  }
-  
-  @media (max-width: 576px) {
-    .destaque-com-imagem {
-      padding: 40px 20px;
-    }
-    
-    .destaque-texto h2 {
-      font-size: 1.8rem;
-    }
-    
-    .btn-destaque {
-      padding: 15px 30px;
-      width: 100%;
-      text-align: center;
-    }
-  }
-  /* Estilos para a seção de benefícios com imagem */
+
+.beneficio-card p {
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+.destaque-cupom {
+  background: #ff6600;
+  color: white;
+  padding: 3px 10px;
+  border-radius: 5px;
+  font-weight: bold;
+  display: inline-block;
+  margin-top: 5px;
+}
+
+/* Grid de benefícios - versão 2 */
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin: 40px 0;
+}
+
+.benefit-card {
+  background: var(--white);
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.benefit-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.benefit-icon {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  color: var(--primary);
+}
+
+.benefit-card h3 {
+  color: var(--secondary);
+  margin-bottom: 10px;
+}
+
+/* Seção benefícios com imagem */
 .benefits-content {
   display: flex;
   align-items: flex-start;
@@ -1471,13 +649,109 @@ html {
   min-width: 300px;
 }
 
-.benefit-icon i {
-  font-size: 2.5rem;
-  color: #ff6600;
-  margin-bottom: 15px;
+/* Seção destaque com imagem */
+.destaque-com-imagem {
+  background: linear-gradient(135deg, #000000, #ff6600);
+  color: white;
+  padding: 60px 20px;
+  margin: 60px 0;
 }
 
-/* Responsivo */
+.destaque-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.destaque-texto {
+  flex: 1;
+}
+
+.destaque-texto h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  position: relative;
+  color: white;
+}
+
+.destaque-texto h2:after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 80px;
+  height: 3px;
+  background: white;
+}
+
+.destaque-texto p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  margin-bottom: 25px;
+  opacity: 0.9;
+}
+
+.destaque-lista {
+  list-style: none;
+  margin: 30px 0;
+}
+
+.destaque-lista li {
+  padding: 10px 0;
+  font-size: 1.1rem;
+  position: relative;
+  padding-left: 35px;
+}
+
+.destaque-lista li span {
+  color: #ff6600;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+  font-size: 1.5rem;
+}
+
+.destaque-imagem {
+  flex: 1;
+  position: relative;
+}
+
+.foto-metodo {
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+  border: 5px solid white;
+  transform: rotate(-3deg);
+  transition: transform 0.3s ease;
+}
+
+.foto-metodo:hover {
+  transform: rotate(0deg) scale(1.02);
+}
+
+.btn-destaque {
+  display: inline-block;
+  padding: 18px 40px;
+  background: white;
+  color: #ff6600;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.btn-destaque:hover {
+  background: #000;
+  color: white;
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+}
+
+/* ============ RESPONSIVIDADE ============ */
 @media (max-width: 992px) {
   .benefits-content {
     flex-direction: column;
@@ -1492,16 +766,614 @@ html {
   .foto-transformacao {
     height: 100%;
   }
+  
+  .destaque-container {
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  .destaque-texto, .destaque-imagem {
+    width: 100%;
+  }
+  
+  .destaque-texto h2 {
+    font-size: 2rem;
+  }
+  
+  .foto-metodo {
+    max-width: 500px;
+    margin: 0 auto;
+  }
 }
 
 @media (max-width: 768px) {
+  .beneficios-grid,
   .benefits-grid {
     grid-template-columns: 1fr;
+  }
+  
+  .beneficio-card {
+    padding: 30px 20px;
   }
   
   .benefits-image {
     height: 250px;
   }
+}
+
+@media (max-width: 576px) {
+  .destaque-com-imagem {
+    padding: 40px 20px;
+  }
+  
+  .destaque-texto h2 {
+    font-size: 1.8rem;
+  }
+  
+  .btn-destaque {
+    padding: 15px 30px;
+    width: 100%;
+    text-align: center;
+  }
+}
+/* ============ SEÇÃO DESTAQUE ============ */
+.destaque {
+  background: linear-gradient(135deg, #000000, #ff6600);
+  color: var(--white);
+  padding: 80px 20px;
+  text-align: center;
+  margin: 60px 0;
+  border-radius: 15px;
+}
+
+.destaque h2 {
+  color: var(--white);
+  margin-bottom: 25px;
+  font-size: 2.2rem;
+  position: relative;
+}
+
+.destaque h2:after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: var(--white);
+  margin-top: 15px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.destaque p {
+  max-width: 800px;
+  margin: 0 auto 40px;
+  font-size: 1.2rem;
+  line-height: 1.8;
+}
+
+/* ============ CTA SECTION ============ */
+.cta {
+  text-align: center;
+    margin: 30px 0; /* Reduzi a margem para mobile */
+    animation: pulse 2s infinite;
+    padding: 0 15px;
+}
+
+.cta a {
+  display: inline-block;
+  padding: 20px 50px;
+  background: #000000;
+  color: var(--white);
+  font-size: 1.3rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 50px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  transition: 
+    background 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.cta a:hover {
+  background: #ff6600;
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+}
+
+.cta-button {
+    background: var(--primary);
+    color: var(--white);
+    padding: 16px 30px; 
+    font-size: 1rem; 
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+    font-weight: 600;
+    box-shadow: 0 5px 15px rgba(255,94,0,0.3);
+    border: none;
+    cursor: pointer;
+    animation: pulse 2s infinite;
+    -webkit-tap-highlight-color: transparent; 
+    min-width: 200px; 
+}
+
+.cta-button:hover, .cta-button:active {
+    background: var(--primary-dark);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(255,94,0,0.4);
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* ============ SEÇÃO "QUEM É GABRIEL" ============ */
+.about-section {
+  margin: 40px auto; 
+  background: var(--white); 
+  border-radius: 15px; 
+  box-shadow: 0 10px 40px rgba(0,0,0,0.1); 
+  overflow: hidden; 
+}
+
+.about-content {
+  display: flex;
+  flex-wrap: wrap; 
+  align-items: center; 
+}
+
+.about-text {
+  flex: 1; 
+  min-width: 300px; 
+  padding: 40px; 
+}
+
+.specialty-item {
+  font-size: 20px; 
+  line-height: 1.8; 
+}
+
+.about-image {
+  flex: 1; 
+  min-width: 300px; 
+  position: relative; 
+}
+
+.about-image img {
+  width: 100%; 
+  height: 100%; 
+  min-height: 400px; 
+  object-fit: cover; 
+}
+
+.btn-comece-agora {
+  display: inline-block;
+  padding: 18px 40px; 
+  background: linear-gradient(45deg, #ff6600, #ff8c00); 
+  color: white; 
+  text-decoration: none; 
+  border-radius: 50px; 
+  font-weight: 700; 
+  margin: 30px auto; 
+  transition: all 0.3s ease; 
+  text-align: center; 
+  font-size: 1.3rem;
+  box-shadow: 0 5px 15px rgba(255, 102, 0, 0.4); 
+  border: none; 
+  cursor: pointer; 
+  width: fit-content;
+  animation: pulse 2s infinite; 
+}
+.btn-comece-agora:hover {
+  transform: translateY(-3px) scale(1.05); 
+  box-shadow: 0 10px 25px rgba(255, 102, 0, 0.5);
+}
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); } 
+  100% { transform: scale(1); } 
+}
+html {
+  scroll-behavior: smooth; 
+}
+
+  /* ============ SEÇÃO FEEDBACKS DOS ALUNOS ============ */
+  .depoimentos-section {
+    margin: 60px auto;
+    background: var(--white);
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+    max-width: 1200px;
+  }
+
+  .depoimentos-container {
+    padding: 60px;
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .depoimentos-title {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .depoimentos-title h2 {
+    text-align: center;
+    margin-bottom: 15px;
+    position: relative;
+  }
+
+  .depoimentos-title h2:after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: var(--primary-color);
+  }
+
+  .depoimentos-title p {
+    font-size: 1.1rem;
+    color: #666;
+    max-width: 700px;
+    margin: 0 auto; 
+    text-align: center; 
+  }
+
+  /* Estilos do Carrossel */
+  .carrossel-container {
+    position: relative;
+    overflow: hidden;
+    margin: 40px 0;
+    border-radius: 10px;
+  }
+
+  .carrossel-track {
+    display: flex;
+    transition: transform 0.5s ease;
+  }
+
+  .depoimento-card {
+    min-width: 100%;
+    padding: 0 15px;
+    box-sizing: border-box;
+  }
+
+  .depoimento-img {
+    width: 90%; /* Reduzido para 90% no desktop */
+    max-width: 600px; /* Largura máxima reduzida */
+    height: auto;
+    margin: 0 auto; /* Centraliza a imagem */
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    display: block;
+    transition: transform 0.3s ease;
+  }
+
+  .depoimento-img:hover {
+    transform: scale(1.02);
+  }
+
+  .carrossel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+    z-index: 10;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .carrossel-btn:hover {
+    background: rgba(0,0,0,0.8);
+    transform: translateY(-50%) scale(1.1);
+  }
+
+  .carrossel-prev {
+    left: 20px;
+  }
+
+  .carrossel-next {
+    right: 20px;
+  }
+
+  .carrossel-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    gap: 10px;
+  }
+
+  .carrossel-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #ccc;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+
+  .carrossel-dot.active {
+    background: var(--primary-color);
+    transform: scale(1.2);
+  }
+
+  /* ============ RESPONSIVIDADE ============ */
+  @media (max-width: 768px) {
+    .depoimentos-section {
+      margin: 40px auto;
+      border-radius: 10px;
+    }
+    
+    .depoimentos-container {
+      padding: 40px 20px;
+    }
+    
+    .carrossel-btn {
+      width: 35px;
+      height: 35px;
+    }
+    
+    /* No mobile, a imagem ocupa 100% da largura */
+    .depoimento-img {
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .depoimentos-title h2 {
+      font-size: 1.8rem;
+    }
+    
+    .depoimentos-title p {
+      font-size: 1rem;
+    }
+    
+    .carrossel-btn {
+      width: 30px;
+      height: 30px;
+      font-size: 16px;
+    }
+  }
+
+/* ============ RESPONSIVIDADE DEMAIS TELAS ============ */
+@media (max-width: 1200px) {
+  .result-images img {
+    height: 300px;
+  }
+}
+
+@media (max-width: 992px) {
+  .section-content {
+    padding: 50px 40px;
+  }
+  
+  .plano-card {
+    min-width: 280px;
+  }
+  
+  .result-images img {
+    height: 280px;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    padding: 80px 20px 60px;
+  }
+  
+  header h1 {
+    font-size: 2.2rem;
+  }
+  
+  header p {
+    font-size: 1.1rem;
+  }
+  
+  .personal-photo {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .section-content {
+    padding: 40px 30px;
+  }
+  
+  h2 {
+    font-size: 1.8rem;
+  }
+  
+  .result-images img {
+    height: 250px;
+  }
+  
+  .plano-card {
+    min-width: 100%;
+    max-width: 100%;
+  }
+  
+  .cta a {
+    font-size: 1.1rem;
+    padding: 18px 40px;
+  }
+  
+  .carousel-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+  
+  .about-text, .about-image {
+    min-width: 100%;
+  }
+  
+  .about-image img {
+    min-height: 300px;
+  }
+}
+
+@media (max-width: 576px) {
+  header {
+    padding: 60px 20px 40px;
+  }
+  
+  header h1 {
+    font-size: 1.8rem;
+  }
+  
+  .personal-photo {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .section-content {
+    padding: 30px 20px;
+  }
+  
+  h2 {
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+  }
+  
+  ul li {
+    font-size: 1rem;
+    padding-left: 30px;
+  }
+  
+  .destaque {
+    padding: 50px 20px;
+  }
+  
+  .destaque h2 {
+    font-size: 1.8rem;
+  }
+  
+  .destaque p {
+    font-size: 1rem;
+  }
+  
+  footer {
+    padding: 40px 20px;
+  }
+  
+  footer img {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .social-links a {
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+  }
+  
+  .result-images img {
+    height: 220px;
+  }
+  
+  .carousel-btn {
+    width: 35px;
+    height: 35px;
+    font-size: 1rem;
+    padding: 0;
+  }
+  
+  .about-text {
+    padding: 30px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cta-button {
+    padding: 14px 25px;
+    font-size: 0.9rem;
+    width: 90%;
+    max-width: 280px;
+  }
+  
+  .cta {
+    margin: 20px 0;
+  }
+}
+
+/* ============ FOOTER SECTION ============ */
+footer {
+  background: var(--secondary);
+  color: var(--dark-gray);
+  text-align: center;
+  padding: 50px 20px;
+  margin-top: 80px;
+}
+
+footer img {
+  display: block;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  border: 4px solid #ff6600;
+  object-fit: cover;
+}
+
+footer h3 {
+  color: var(--white);
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+footer p {
+  font-size: 1.1rem;
+  margin-bottom: 25px;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 30px 0;
+}
+
+.social-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  color: var(--white);
+  font-size: 1.8rem;
+  background: rgba(17, 17, 17, 0.1);
+  border-radius: 50%;
+  transition: 
+    background-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.social-links a:hover {
+  background: #000000;
+  transform: translateY(-5px);
+}
+
+.copyright {
+  font-size: 0.9rem;
+  opacity: 0.8;
 }
   </style>
 </head>
@@ -1672,7 +1544,7 @@ html {
       <style>
         .before-after {
           padding: 40px 20px;
-          background: linear-gradient(to bottom, #fff9f5, #fff);
+          background: linear-gradient(to bottom, #ffffff, #ffffff);
         }
         
         .before-after h2 {
@@ -1848,32 +1720,41 @@ html {
     <p>Resultados reais de pessoas reais que confiaram no meu método</p>
   </div>
   
-  <div class="depoimentos-vertical">
-    <!-- Depoimento 1 -->
-    <div class="depoimento-single">
-      <img src="depoimento1.png" alt="Depoimento de aluno" class="depoimento-img">
+  <div class="carrossel-container">
+    <div class="carrossel-track">
+      <!-- Depoimento 1 -->
+      <div class="depoimento-card">
+        <img src="depoimento.png" alt="Depoimento de aluno" class="depoimento-img">
+      </div>
+      
+      <!-- Depoimento 2 -->
+      <div class="depoimento-card">
+        <img src="depoimento1.png" alt="Depoimento de aluno" class="depoimento-img">
+      </div>
+      
+      <!-- Depoimento 3 -->
+      <div class="depoimento-card">
+        <img src="depoimento2.png" alt="Depoimento de aluno" class="depoimento-img">
+      </div>
+      
+      <!-- Depoimento 4 -->
+      <div class="depoimento-card">
+        <img src="depoimento4.png" alt="Depoimento de aluno" class="depoimento-img">
+      </div>
+      
+      <!-- Depoimento 5 -->
+      <div class="depoimento-card">
+        <img src="depoimento5.png" alt="Depoimento de aluno" class="depoimento-img">
+      </div>
     </div>
     
-    <!-- Depoimento 2 -->
-    <div class="depoimento-single">
-      <img src="depoimento2.jpeg" alt="Depoimento de aluno" class="depoimento-img">
-    </div>
-    
-    <!-- Depoimento 3 -->
-    <div class="depoimento-single">
-      <img src="depoimento3.jpeg" alt="Depoimento de aluno" class="depoimento-img">
-    </div>
-    
-    <!-- Depoimento 4 -->
-    <div class="depoimento-single">
-      <img src="depoimento4.jpeg" alt="Depoimento de aluno" class="depoimento-img">
-    </div>
-    
-    <!-- Depoimento 5 -->
-    <div class="depoimento-single">
-      <img src="depoimento5.jpeg" alt="Depoimento de aluno" class="depoimento-img">
-    </div>
+    <!-- Botões de navegação -->
+    <button class="carrossel-btn carrossel-prev">❮</button>
+    <button class="carrossel-btn carrossel-next">❯</button>
   </div>
+  
+  <!-- Indicadores de slide -->
+  <div class="carrossel-dots"></div>
 </div>
 
 <style>
@@ -1930,7 +1811,7 @@ html {
               <div class="plano-header">
                 <h3>Individual</h3>
                 <div class="plano-preco">R$ 180,00<span>/mês</span></div>
-                <span> No crédito: R$190,00 até 2x</span>
+                <span> no pix ou R$190,00 no crédito em até 2x</span>
                 <p class="economia">Desconto de 5,26% no Pix.</p>
               </div>
               
@@ -1939,7 +1820,6 @@ html {
                 <li><span>✓</span> Vídeos demonstrativos</li>
                 <li><span>✓</span> Avaliação física inicial</li>
                 <li><span>✓</span> Suporte via WhatsApp</li>
-                <li><span>✓</span> Reavaliação mensal</li>
               </ul>
               
               <div class="plano-cta">
@@ -1964,7 +1844,6 @@ html {
                 <li><span>✓</span> Todos os benefícios do Individual</li>
                 <li><span>✓</span> Para você e mais uma pessoa</li>
                 <li><span>✓</span> Economia de 15% por pessoa</li>
-                <li><span>✓</span> Treinos sincronizados</li>
                 <li><span>✓</span> Motivação em dobro</li>
               </ul>
               
@@ -1996,6 +1875,7 @@ html {
                 <li><span>✓</span> Coqueteleira de brinde</li>
                 <li><span>✓</span> Pagamento único</li>
                 <li><span>✓</span> R$ 160/mês</li>
+                <li><span>✓</span> Reavaliação postural</li>
               </ul>
               
               <div class="plano-cta">
@@ -2020,7 +1900,6 @@ html {
                 <li><span>✓</span> Todos os benefícios do Individual</li>
                 <li><span>✓</span> Coqueteleira para cada</li>
                 <li><span>✓</span> Economia de 17% por pessoa</li>
-                <li><span>✓</span> Treinos complementares</li>
               </ul>
               
               <div class="plano-cta">
@@ -2050,7 +1929,6 @@ html {
                 <li><span>✓</span> Todos os benefícios do trimestral</li>
                 <li><span>✓</span>  Coqueteleira</li>
                 <li><span>✓</span> R$ 150/mês</li>
-                <li><span>✓</span> Acompanhamento prioritário</li>
               </ul>
               
               <div class="plano-cta">
@@ -2075,7 +1953,6 @@ html {
                 <li><span>✓</span> Todos os benefícios do Individual</li>
                 <li><span>✓</span>  Coqueteleira para cada</li>
                 <li><span>✓</span> Economia de 22% por pessoa</li>
-                <li><span>✓</span> Desafios exclusivos</li>
               </ul>
               
               <div class="plano-cta">
@@ -2130,7 +2007,6 @@ html {
                 <li><span>✓</span> Todos os benefícios do Individual</li>
                 <li><span>✓</span> Brindes premium para cada (camiseta + coqueteleira)</li>
                 <li><span>✓</span> Economia de 27% por pessoa</li>
-                <li><span>✓</span> Programa de metas exclusivo</li>
               </ul>
               
               <div class="plano-cta">
@@ -2413,6 +2289,59 @@ html {
         document.querySelector('.tab-btn[data-tab="anual"]').classList.add('active');
         document.querySelector('#anual').classList.add('active');
       });
+      </script>
+      <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          const track = document.querySelector('.carrossel-track');
+          const slides = Array.from(document.querySelectorAll('.depoimento-card'));
+          const nextBtn = document.querySelector('.carrossel-next');
+          const prevBtn = document.querySelector('.carrossel-prev');
+          const dotsContainer = document.querySelector('.carrossel-dots');
+          
+          let currentIndex = 0;
+          const slideCount = slides.length;
+          
+          // Criar indicadores de slide
+          slides.forEach((_, index) => {
+            const dot = document.createElement('div');
+            dot.classList.add('carrossel-dot');
+            if (index === 0) dot.classList.add('active');
+            dot.addEventListener('click', () => {
+              goToSlide(index);
+            });
+            dotsContainer.appendChild(dot);
+          });
+          
+          const dots = document.querySelectorAll('.carrossel-dot');
+          
+          // Atualizar a posição do carrossel
+          function updateCarrossel() {
+            track.style.transform = `translateX(-${currentIndex * 100}%)`;
+            
+            // Atualizar dots ativos
+            dots.forEach((dot, index) => {
+              dot.classList.toggle('active', index === currentIndex);
+            });
+          }
+          
+          // Ir para slide específico
+          function goToSlide(index) {
+            currentIndex = index;
+            updateCarrossel();
+          }
+          
+          // Próximo slide
+          nextBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % slideCount;
+            updateCarrossel();
+          });
+          
+          // Slide anterior
+          prevBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + slideCount) % slideCount;
+            updateCarrossel();
+          });
+        });
       </script>
 </body>
 </html>
